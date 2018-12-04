@@ -5,6 +5,7 @@ import Vue from 'vue';
 import router from './router';
 import store from './store';
 import './registerServiceWorker';
+import './styles/main.scss';
 import App from './App.vue';
 
 Vue.use(ElementUI);
