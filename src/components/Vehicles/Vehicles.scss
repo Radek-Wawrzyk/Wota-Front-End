@@ -1,0 +1,22 @@
+.vehicles {
+  &-title {
+    text-align: center;
+    margin: 0 0 70px 0;
+  }
+}
+
+//Vehicle
+
+.vehicle {
+  &-title {
+    margin: 0 0 15px 0;
+  }
+  &-category {
+    color: $secondary-lighter;
+    font-size: 14px;
+  }
+  &-img {
+    width: 100%;
+    height: auto;
+  }
+}

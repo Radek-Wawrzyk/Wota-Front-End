@@ -11,6 +11,14 @@
 
 //Sections
 
-section {
+.home section {
   padding: 70px 0;
+}
+
+//Media
+
+@media screen and (max-width: 768px) {
+  .home section {
+    padding: 40px 0;
+  }
 }
