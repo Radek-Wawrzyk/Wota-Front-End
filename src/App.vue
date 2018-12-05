@@ -2,12 +2,16 @@
   <div id="app">
     <Navbar />
     <router-view/>
-    <a class="el-button el-button--danger is-round is-plain" link round >Siema</a>
-    <Sale></Sale>
+    <About />
+    <Categories />
     <p>Dupa jasia</p>
-    <Categories></Categories>
-    <router-link to="kategorie" aria-label="Kategorie" class="btn btn-primary">Zobacz wszystkie ></router-link>
-     <router-link to="kategorie" aria-label="Kategorie" class="btn btn-outline">Zobacz wszystkie ></router-link>
+    <Sale />
+    
+    
+    <p>All buttons to test</p>
+    <button class="btn btn-primary">Zobacz wszystkie ></button>
+    <button class="btn btn-outline">Zobacz wszystkie ></button>
+    <button class="btn btn-outline-white">Zobacz wszystkie ></button>
   </div>
 </template>
 
@@ -16,12 +20,14 @@
 import Navbar from './components/Navbar/Navbar.vue';
 import Sale from './components/Sale/Sale.vue';
 import Categories from './components/Categories/Categories.vue';
+import About from './components/About/About.vue';
 
 export default {
   components:{
     Navbar,
     Sale,
-    Categories
+    Categories,
+    About
   }
 }
 </script>
