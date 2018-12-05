@@ -1,0 +1,39 @@
+.btn {
+  display: inline-block;
+  background: white;
+  border: 2px solid $primary;
+  border-radius: 20px;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  word-spacing: 5px;
+  font-weight: 600;
+  transition: color 0.25s, background 0.25s, border-color 0.25s;
+  &-primary {
+    background: $primary;
+    color: white;
+    &:hover, &:focus, &:active {
+      background: lighten($primary, 25%);
+      border-color: lighten($primary, 25%);
+      color: white;
+    }
+  }
+  &-outline {
+    background: transparent;
+    border-color: $primary;
+    color: $primary;
+    &:hover, &:focus, &:active {
+      background: $primary;
+      color: white;
+    }
+    &-white {
+      border-color: white;
+      background: transparent;
+      color: white;
+      &:hover, &:focus, &:active {
+        background: white;
+        color: $primary;
+      }
+    }
+  }
+}
+
