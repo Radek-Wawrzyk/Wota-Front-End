@@ -11,9 +11,6 @@
     width: 100%;
     margin: 0 auto;
   }
-  .VueCarousel-navigation-prev {
-    left: 50px;
-  }
 }
 
 //Testimonial
@@ -50,11 +47,42 @@
   }
 }
 
+
+//Prev & Next buttons 
+
+.VueCarousel-navigation-button {
+  svg {
+    width: 25px;
+    height: auto;
+    path {
+      fill: #c7c7c7
+    }
+  } 
+}
+.VueCarousel-navigation-prev {
+  left: 100px !important;
+}
+.VueCarousel-navigation-next {
+  right: 100px !important;
+}
+.VueCarousel-navigation--disabled {
+  opacity: 0.5 !important;
+}
+
 //Media 
 
 @media screen and (max-width: 768px) {
   .testimonial {
     padding: 50px;
+  }
+  .VueCarousel-navigation-button {
+    top: 40% !important;
+  }
+  .VueCarousel-navigation-prev {
+    left: 50px !important;
+  }
+  .VueCarousel-navigation-next {
+    right: 50px !important;
   }
 }
 
