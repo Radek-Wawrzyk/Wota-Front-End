@@ -1,5 +1,6 @@
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import VueCarousel from 'vue-carousel';
 
 import Vue from 'vue';
 import router from './router';
@@ -8,6 +9,8 @@ import './registerServiceWorker';
 import './styles/main.scss';
 import App from './App.vue';
 
+
+Vue.use(VueCarousel);
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
