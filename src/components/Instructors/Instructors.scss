@@ -1,0 +1,79 @@
+.instructors {
+  &-title {
+    text-align: center;
+    margin: 0 0 50px 0;
+  }
+  &-slider {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &-footer {
+    text-align: center;
+    margin: 50px 0 0 0;
+    a {
+      letter-spacing: 1px;
+    }
+  }
+  .VueCarousel-navigation-prev {
+    left: 0px;
+  }
+  .VueCarousel-navigation-next {
+    right: 0px;
+  }
+  .VueCarousel-navigation--disabled {
+    opacity: 0.5;
+  }
+  .VueCarousel-dot-button {
+    border: 2px solid $primary;
+    background: white !important;
+  }
+  .VueCarousel-dot--active {
+    button {
+      background: $primary !important;
+    }
+  }
+}
+
+//Instructor
+
+.instructor {
+  text-align: center;
+  padding: 0 50px;
+  &-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 2px solid $primary;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 0 50px 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &-name {
+    text-align: left;
+  }
+  &-list {
+    margin: 15px 0;
+    text-align: left;
+    &-item {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      color: $secondary-lighter;
+      span {
+        color: $primary;
+        font-weight: 500;
+      }
+    }
+  }
+  &-more {
+    text-align: right;
+    text-transform: uppercase;
+    color: $primary;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}

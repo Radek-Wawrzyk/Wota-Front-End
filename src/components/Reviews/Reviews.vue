@@ -7,7 +7,7 @@
       >
         <slide class="testimonial" v-for="testimonial in testimonials" :key="testimonial.id">
           <figure class="testimonial-img">
-            <img :src="testimonial.img" :key="testimonial.name" />
+            <img :src="testimonial.img" :alt="testimonial.author" />
           </figure>
           <p class="testimonial-content">{{testimonial.content}}</p>
           <footer class="testimonial-author">
