@@ -1,0 +1,18 @@
+.el-input__inner, .el-textarea__inner {
+  text-transform: uppercase;
+  border-color: $secondary;
+  border-radius: 20px;
+  padding: 20px 40px;
+}
+.el-input__inner {
+  height: 50px;
+}
+.el-select {
+  width: 100%;
+}
+
+//Placeholders
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+  color: $secondary !important;
+} 

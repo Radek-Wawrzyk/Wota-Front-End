@@ -6,6 +6,7 @@
     <Reviews />
     <Instructors />
     <Sale />
+    <ContactForm />
   </main>
 </template>
 
@@ -17,6 +18,7 @@ import About from '../components/About/About.vue';
 import Vehicles from '../components/Vehicles/Vehicles.vue';
 import Reviews from '../components/Reviews/Reviews.vue';
 import Instructors from '../components/Instructors/Instructors.vue';
+import ContactForm from '../components/ContactForm/ContactForm.vue';
 
 export default {
   name: 'home',
@@ -26,7 +28,8 @@ export default {
     About,
     Vehicles,
     Reviews,
-    Instructors
+    Instructors,
+    ContactForm
   }
 };
 

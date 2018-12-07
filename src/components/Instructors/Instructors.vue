@@ -5,7 +5,6 @@
         :navigationEnabled="true" :navigationNextLabel="this.next" :navigationPrevLabel="this.prev"  
         :perPageCustom="[[320, 1], [768, 2], [992, 3]]"
       >
-       
         <slide class="instructor el-col el-col-8" v-for="instructor in instructors" :key="instructor.name">
           <figure class="instructor-img">
             <img :src="instructor.img" :alt="instructor.name" />

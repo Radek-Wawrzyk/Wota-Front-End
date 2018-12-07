@@ -8,6 +8,9 @@
   word-spacing: 5px;
   font-weight: 600;
   transition: color 0.25s, background 0.25s, border-color 0.25s;
+  &:hover {
+    cursor: pointer;
+  }
   &-primary {
     background: $primary;
     color: white;
@@ -15,7 +18,6 @@
       background: lighten($primary, 25%);
       border-color: lighten($primary, 25%);
       color: white;
-      cursor: pointer;
     }
   }
   &-outline {
