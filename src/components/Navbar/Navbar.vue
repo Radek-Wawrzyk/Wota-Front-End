@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="nav-logo">
-      <img src="../../assets/img/logo.png">
+      <img src="../../assets/img/logoC.png">
     </div>
     <div>
       <ul class="nav-list">
