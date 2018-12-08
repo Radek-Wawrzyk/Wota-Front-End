@@ -1,6 +1,8 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-//Container 
+//Container
 
 .container {
   width: 100%;
@@ -15,7 +17,7 @@ main {
   overflow-x: hidden;
   overflow-y: auto;
   > section {
-    padding:  70px 0;
+    padding: 70px 0;
   }
 }
 
@@ -25,4 +27,18 @@ main {
   main > section {
     padding: 40px 0;
   }
+}
+
+// Other
+
+.text-primary {
+  color: $primary;
+}
+
+.font-weight-bold {
+  font-weight: 500;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }

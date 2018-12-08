@@ -11,7 +11,7 @@
         <li>Pojazdy</li>
         <li>Projekty</li>
         <li class>
-          <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+          <a href="#kontakt" class="btn btn-primary">Kontakt</a>
         </li>
       </ul>
     </div>
