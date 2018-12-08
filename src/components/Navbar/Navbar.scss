@@ -1,0 +1,30 @@
+.navbar {
+  position: fixed;
+  background: white;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 4rem;
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.175);
+  .nav-logo {
+    img {
+      width: 140px;
+    }
+  }
+  .nav-list {
+    li {
+      display: inline;
+      margin-left: 3rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      padding-bottom: 0.3rem;
+      &:hover:not(:last-child) {
+        cursor: pointer;
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
+}
