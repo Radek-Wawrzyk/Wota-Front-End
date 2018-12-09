@@ -9,9 +9,14 @@ import './registerServiceWorker';
 import './styles/main.scss';
 import App from './App.vue';
 
+import SubHeader from './components/SubHeader/SubHeader.vue';
 
+//Libraries
 Vue.use(VueCarousel);
 Vue.use(ElementUI);
+
+//Global components
+Vue.component('SubHeader', SubHeader);
 
 Vue.config.productionTip = false;
 

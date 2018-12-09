@@ -1,0 +1,11 @@
+.header {
+  margin: 64px 0 100px 0;
+  padding: 100px 15px;
+  text-align: center;
+  background-image: url('../../assets/img/baner.jpg');
+  background-position: center;
+  &-title {
+    font-weight: 700;
+    font-size: 46px;
+  }
+}
