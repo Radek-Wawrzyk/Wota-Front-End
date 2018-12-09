@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar">
     <div class="nav-logo">
-      <img src="../../assets/img/logoC.png">
+      <a href="/">
+        <img src="../../assets/img/logoC.png">
+      </a>
     </div>
     <div>
       <ul class="nav-list">
@@ -21,7 +23,7 @@
           <a href="#" class="nav-link">Projekty</a>
         </li>
         <li class>
-          <a href="#kontakt" class="btn btn-primary">Kontakt</a>
+          <a href="/kontakt" class="btn btn-primary">Kontakt</a>
         </li>
       </ul>
     </div>
