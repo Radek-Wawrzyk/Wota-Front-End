@@ -1,6 +1,6 @@
 <template>
   <section class="contact-form">
-    <h2 class="contact-form-title">Kontakt</h2>
+    <h2 class="contact-form-title">{{title}}</h2>
     <div class="container">
       <el-form  @submit.prevent="submit">
         <el-row :gutter="30">
@@ -63,6 +63,9 @@ export default {
       }
     ]
   }),
+  props: [
+    'title'
+  ],
   methods: {
     submit() {
       alert(`Form submited!`);
