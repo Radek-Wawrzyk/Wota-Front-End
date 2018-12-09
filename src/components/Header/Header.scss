@@ -4,7 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  background-image: url("../../assets/img/baner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   h1 {
     letter-spacing: 3px;
     margin-bottom: 2rem;

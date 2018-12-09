@@ -1,4 +1,4 @@
-# dupa
+# WOTA
 
 ## Project setup
 ```
