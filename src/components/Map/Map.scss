@@ -1,0 +1,28 @@
+.map {
+  position: relative;
+  padding: 0;
+  &-red::before {
+    content: "";
+    position: relative;
+    display: block;
+    height: 250px;
+    width: 100%;
+    background: $primary;
+  } 
+  iframe {
+    display: block;
+    width: 100%;
+    filter: grayscale(100%);
+  }
+}
+
+//media 
+
+@media screen and (max-width: 768px) {
+  .map iframe {
+    height: 300px;
+  }
+  .map-red::before {
+    height: 150px;
+  }
+}

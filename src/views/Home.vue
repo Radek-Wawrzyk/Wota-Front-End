@@ -8,6 +8,7 @@
     <Instructors/>
     <Sale/>
     <ContactForm/>
+    <Map />
     <Footer/>
   </main>
 </template>
@@ -22,9 +23,10 @@ import Vehicles from "../components/Vehicles/Vehicles.vue";
 import Reviews from "../components/Reviews/Reviews.vue";
 import Instructors from "../components/Instructors/Instructors.vue";
 import ContactForm from "../components/ContactForm/ContactForm.vue";
+import Map from "../components/Map/Map.vue";
 
 export default {
-  name: "home",
+  name: 'Home',
   components: {
     Header,
     Sale,
@@ -34,6 +36,7 @@ export default {
     Reviews,
     Instructors,
     ContactForm,
+    Map,
     Footer
   }
 };

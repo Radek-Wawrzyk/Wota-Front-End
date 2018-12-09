@@ -38,27 +38,27 @@ export default {
         img: 'https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg'
       },
        {
-        name: 'Eugeniusz Krabson',
+        name: 'Jan Kowalski',
         content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aliquam voluptate earum et recusandae officia. Aut hic id ea, ipsam odio delectus vero? Iure tenetur alias fuga. Tempora, atque omnis.',
         img: 'https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg'
       },
        {
-        name: 'Plankton 2',
+        name: 'Jacek Bąk',
         content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aliquam voluptate earum et recusandae officia. Aut hic id ea, ipsam odio delectus vero? Iure tenetur alias fuga. Tempora, atque omnis.',
         img: 'https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg'
       },
       {
-        name: 'xdx2d',
+        name: 'Zygmunt Waza',
         content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aliquam voluptate earum et recusandae officia. Aut hic id ea, ipsam odio delectus vero? Iure tenetur alias fuga. Tempora, atque omnis.',
         img: 'https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg'
       },
        {
-        name: 'xdx22d',
+        name: 'Jacek Szpak',
         content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aliquam voluptate earum et recusandae officia. Aut hic id ea, ipsam odio delectus vero? Iure tenetur alias fuga. Tempora, atque omnis.',
         img: 'https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg'
       },
        {
-        name: 'xdxd222',
+        name: 'Hans Kloss',
         content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aliquam voluptate earum et recusandae officia. Aut hic id ea, ipsam odio delectus vero? Iure tenetur alias fuga. Tempora, atque omnis.',
         img: 'https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg'
       }
