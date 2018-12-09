@@ -7,14 +7,12 @@
     <Reviews/>
     <Instructors/>
     <Sale/>
-    <ContactForm/>
+    <ContactForm title='Kontakt' />
     <Map />
-    <Footer/>
   </main>
 </template>
 
 <script>
-import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Sale from "../components/Sale/Sale.vue";
 import Categories from "../components/Categories/Categories.vue";
@@ -36,8 +34,7 @@ export default {
     Reviews,
     Instructors,
     ContactForm,
-    Map,
-    Footer
+    Map
   }
 };
 </script>
