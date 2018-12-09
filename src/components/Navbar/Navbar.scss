@@ -23,7 +23,24 @@
       padding-bottom: 0.3rem;
       &:hover:not(:last-child) {
         cursor: pointer;
-        border-bottom: 2px solid $primary;
+      }
+      .nav-link {
+        display: inline-block;
+        color: #000;
+        text-decoration: none;
+      }
+
+      .nav-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: $primary;
+        transition: width 0.3s;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
       }
     }
   }

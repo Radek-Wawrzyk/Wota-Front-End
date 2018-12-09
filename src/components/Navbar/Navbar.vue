@@ -5,11 +5,21 @@
     </div>
     <div>
       <ul class="nav-list">
-        <li>Główna</li>
-        <li>Kursy</li>
-        <li>Instruktorzy</li>
-        <li>Pojazdy</li>
-        <li>Projekty</li>
+        <li>
+          <a href="#" class="nav-link">Główna</a>
+        </li>
+        <li>
+          <a href="#" class="nav-link">Kursy</a>
+        </li>
+        <li>
+          <a href="#" class="nav-link">Instruktorzy</a>
+        </li>
+        <li>
+          <a href="#" class="nav-link">Pojazdy</a>
+        </li>
+        <li>
+          <a href="#" class="nav-link">Projekty</a>
+        </li>
         <li class>
           <a href="#kontakt" class="btn btn-primary">Kontakt</a>
         </li>
