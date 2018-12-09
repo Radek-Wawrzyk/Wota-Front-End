@@ -1,29 +1,29 @@
 <template>
   <nav class="navbar">
     <div class="nav-logo">
-      <a href="/">
+      <router-link to="/">
         <img src="../../assets/img/logoC.png">
-      </a>
+      </router-link>
     </div>
     <div>
       <ul class="nav-list">
         <li>
-          <a href="#" class="nav-link">Główna</a>
+          <router-link to="/" class="nav-link">Główna</router-link>
         </li>
         <li>
-          <a href="#" class="nav-link">Kursy</a>
+          <router-link to="" class="nav-link">Kursy</router-link>
         </li>
         <li>
-          <a href="#" class="nav-link">Instruktorzy</a>
+          <router-link to="" class="nav-link">Instruktorzy</router-link>
         </li>
         <li>
-          <a href="#" class="nav-link">Pojazdy</a>
+          <router-link to="" class="nav-link">Pojazdy</router-link>
         </li>
         <li>
-          <a href="#" class="nav-link">Projekty</a>
+          <router-link to="" class="nav-link">Projekty</router-link>
         </li>
         <li class>
-          <a href="/kontakt" class="btn btn-primary">Kontakt</a>
+          <router-link to="/kontakt" class="btn btn-primary">Kontakt</router-link>
         </li>
       </ul>
     </div>
