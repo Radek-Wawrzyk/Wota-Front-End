@@ -17,6 +17,11 @@ export default new Router({
       path: '/kontakt',
       name: 'contact',
       component: () => import('./views/Contact/Contact.vue')
+    },
+    {
+      path: '/instruktorzy',
+      name: 'instructos',
+      component: () => import('./views/InstructorsPage/InstructorsPage.vue')
     }
   ],
 });

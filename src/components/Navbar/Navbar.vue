@@ -14,7 +14,7 @@
           <router-link to="" class="nav-link">Kursy</router-link>
         </li>
         <li>
-          <router-link to="" class="nav-link">Instruktorzy</router-link>
+          <router-link to="/instruktorzy" class="nav-link">Instruktorzy</router-link>
         </li>
         <li>
           <router-link to="" class="nav-link">Pojazdy</router-link>
