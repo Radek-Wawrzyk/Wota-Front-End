@@ -22,6 +22,11 @@ export default new Router({
       path: '/instruktorzy',
       name: 'instructos',
       component: () => import('./views/InstructorsPage/InstructorsPage.vue')
+    },
+    {
+      path: '/pojazdy',
+      name: 'vehicles',
+      component: () => import('./views/VehiclesPage/VehiclesPage.vue')
     }
   ],
 });

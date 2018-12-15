@@ -117,8 +117,7 @@ export default {
   components: {
     Sale
   }
-}
-
+};
 </script>
 
 <style lang="scss" scoped src="./InstructorsPage.scss" />
