@@ -1,38 +1,49 @@
 <template>
-  <nav class="navbar">
-    <div class="nav-logo">
+  <nav class="navigation">
+    <figure class="navigation-logo">
       <router-link to="/">
         <img src="../../assets/img/logoC.png">
       </router-link>
-    </div>
-    <div>
-      <ul class="nav-list">
-        <li>
-          <router-link to="/" class="nav-link">Główna</router-link>
-        </li>
-        <li>
-          <router-link to="" class="nav-link">Kursy</router-link>
-        </li>
-        <li>
-          <router-link to="/instruktorzy" class="nav-link">Instruktorzy</router-link>
-        </li>
-        <li>
-          <router-link to="/pojazdy" class="nav-link">Pojazdy</router-link>
-        </li>
-        <li>
-          <router-link to="" class="nav-link">Projekty</router-link>
-        </li>
-        <li class>
-          <router-link to="/kontakt" class="btn btn-primary">Kontakt</router-link>
-        </li>
-      </ul>
-    </div>
+    </figure>
+    <button class="navigation-button" :class="{'active': menuStatus}" @click="toggleMenu">
+      <span class="navigation-button-bar"></span>
+      <span class="navigation-button-bar"></span>
+      <span class="navigation-button-bar"></span>
+    </button>
+    <ul class="navigation-menu" :class="{'active': menuStatus}">
+      <li class="navigation-menu-item">
+        <router-link class="navigation-menu-item-link" to="/">Główna</router-link>
+      </li>
+      <li class="navigation-menu-item">
+        <router-link class="navigation-menu-item-link" to="/kursy">Kursy</router-link>
+      </li>
+      <li class="navigation-menu-item">
+        <router-link class="navigation-menu-item-link" to="instruktorzy">Instruktorzy</router-link>
+      </li>
+      <li class="navigation-menu-item">
+        <router-link class="navigation-menu-item-link" to="/pojazdy">Pojazdy</router-link>
+      </li>
+      <li class="navigation-menu-item">
+        <router-link class="navigation-menu-item-link" to="/projekty">Projekty</router-link>
+      </li>
+      <li class="navigation-menu-item last">
+        <router-link class="navigation-menu-item-link last btn btn-primary" to="/kontakt">kontakt</router-link>
+      </li>
+    </ul>
   </nav>
 </template>
 
 <script>
 export default {
-  name: "Navbar"
+  name: "Navbar",
+  data: () => ({
+    menuStatus: false
+  }),
+  methods: {
+    toggleMenu() {
+      this.menuStatus =! this.menuStatus;
+    }
+  }
 };
 </script>
 
