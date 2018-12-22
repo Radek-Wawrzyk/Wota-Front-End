@@ -2,7 +2,7 @@
   <nav class="navigation">
     <figure class="navigation-logo">
       <router-link to="/">
-        <img src="../../assets/img/logoC.png">
+        <img src="../../assets/img/logoC.png" alt="Wota">
       </router-link>
     </figure>
     <button class="navigation-button" :class="{'active': menuStatus}" @click="toggleMenu" :aria-expanded="menuStatus ? 'true' : 'false'">
@@ -44,7 +44,6 @@ export default {
       if (window.innerWidth <= 1024) {
         this.menuStatus =! this.menuStatus;
       }
-      
     }
   },
 };
