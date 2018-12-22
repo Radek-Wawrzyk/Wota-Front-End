@@ -141,7 +141,7 @@
     height: calc(100vh - 60px);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.25s;
+    transition: opacity 0.25s, visibility 0.25s;
     background: white;
     justify-content: center;
     align-items: center;
@@ -165,5 +165,13 @@
   }
   .navigation-button {
     display: block;
+  }
+}
+
+@media screen and (max-width: 768px) and (max-height: 360px) {
+  .navigation-menu {
+    padding: 50px 0;
+    overflow-y: auto;
+    overflow-x: auto;
   }
 }
