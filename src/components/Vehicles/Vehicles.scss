@@ -3,12 +3,19 @@
     text-align: center;
     margin: 0 0 70px 0;
   }
+  
 }
 
 //Vehicle
 
 .vehicle {
+  text-align: center;
+  span{
+    width: 100%;
+    display: block;
+  }
   &-title {
+    font-weight: 700;
     margin: 0 0 15px 0;
   }
   &-category {
@@ -16,7 +23,7 @@
     font-size: 14px;
   }
   &-img {
-    width: 100%;
+    width: 70%;
     height: auto;
   }
 }

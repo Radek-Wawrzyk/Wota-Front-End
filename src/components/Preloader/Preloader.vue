@@ -2,7 +2,7 @@
   <transition name="fade">
     <section id="preloader" v-if="loading">
       <div class="loader">
-        <label>Loading</label>
+        <label>Ładowanie</label>
       </div>
     </section>
   </transition>

@@ -14,19 +14,24 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/kontakt',
-      name: 'contact',
-      component: () => import('./views/Contact/Contact.vue')
+      path: '/kursy',
+      name: 'courses',
+      component: () => import('./views/CoursesPage/CoursesPage.vue'),
     },
     {
       path: '/instruktorzy',
       name: 'instructos',
-      component: () => import('./views/InstructorsPage/InstructorsPage.vue')
+      component: () => import('./views/InstructorsPage/InstructorsPage.vue'),
     },
     {
       path: '/pojazdy',
       name: 'vehicles',
-      component: () => import('./views/VehiclesPage/VehiclesPage.vue')
-    }
+      component: () => import('./views/VehiclesPage/VehiclesPage.vue'),
+    },
+    {
+      path: '/kontakt',
+      name: 'contact',
+      component: () => import('./views/Contact/Contact.vue'),
+    },
   ],
 });

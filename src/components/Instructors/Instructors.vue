@@ -22,13 +22,16 @@
         </figure>
         <h3 class="instructor-name">{{instructor.name}}</h3>
         <ul class="instructor-list">
-          <li class="instructor-list-item">Kategorie:
+          <li class="instructor-list-item">
+            Kategorie:
             <span>B1, B</span>
           </li>
-          <li class="instructor-list-item">Średnia ocen:
+          <li class="instructor-list-item">
+            Średnia ocen:
             <span>4.9/5</span>
           </li>
-          <li class="instructor-list-item">Opinii:
+          <li class="instructor-list-item">
+            Opinii:
             <span>68</span>
           </li>
         </ul>
@@ -37,6 +40,7 @@
         </footer>
       </slide>
     </carousel>
+
     <footer class="instructors-footer">
       <router-link class="btn btn-outline" to="instruktorzy/">Zobacz wszystkich ></router-link>
     </footer>
