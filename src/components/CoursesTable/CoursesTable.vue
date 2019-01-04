@@ -157,7 +157,6 @@
           </th>
         </tr>
       </tbody>
-      <tbody></tbody>
     </table>
 </template>
 

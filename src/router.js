@@ -29,6 +29,11 @@ export default new Router({
       component: () => import('./views/VehiclesPage/VehiclesPage.vue'),
     },
     {
+      path: '/projekty',
+      name: 'projects',
+      component: () => import('./views/ProjectsPage/ProjectsPage.vue'),
+    },
+    {
       path: '/kontakt',
       name: 'contact',
       component: () => import('./views/Contact/Contact.vue'),
