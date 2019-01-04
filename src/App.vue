@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <Navbar />
-    <router-view></router-view>
+    <div class="page">
+      <transition name="fade-up">
+        <router-view></router-view>
+      </transition>
+    </div>
     <Footer />
     <Preloader :loading="loading" />
   </div>
