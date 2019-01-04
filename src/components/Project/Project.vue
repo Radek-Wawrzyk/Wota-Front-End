@@ -5,7 +5,7 @@
     v-bind:class="{ disabled: disabled }"
   >
     <div class="project-description">
-      <h4>{{disabled ? 'jeset' : 'nie ma'}} Szkolenia na kierowców dla kadr MMŚP z brany transportowej</h4>
+      <h4>Szkolenia na kierowców dla kadr MMŚP z brany transportowej</h4>
       <router-link class="btn btn-primary" to="/instruktorzy/marek-franiak">Więcej</router-link>
     </div>
   </div>
