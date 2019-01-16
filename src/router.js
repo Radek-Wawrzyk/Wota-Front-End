@@ -7,8 +7,8 @@ Vue.use(Router);
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 }
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 };
   },
   routes: [
     {
@@ -20,6 +20,11 @@ export default new Router({
       path: '/kursy',
       name: 'courses',
       component: () => import('./views/CoursesPage/CoursesPage.vue'),
+    },
+    {
+      path: '/kursy/:name',
+      name: 'course',
+      component: () => import('./views/CoursePage/CoursePage.vue'),
     },
     {
       path: '/instruktorzy',

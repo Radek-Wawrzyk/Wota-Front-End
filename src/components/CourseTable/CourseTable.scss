@@ -1,0 +1,34 @@
+.course-table {
+  margin: 100px 0;
+  .course-table-header {
+    background-color: $primary;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 22px;
+    border-radius: 20px 20px 0 0;
+    div {
+      padding: 15px;
+      text-align: center;
+    }
+  }
+  .table-place-title {
+    background-color: $secondary-lighter;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .table-row-wrapper {
+    font-size: 20px;
+    text-align: center;
+    &:nth-child(even) {
+      background-color: #f3f3f3;
+    }
+    .table-row {
+      padding: 15px;
+    }
+  }
+}

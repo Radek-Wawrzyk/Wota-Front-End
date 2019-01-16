@@ -1,0 +1,43 @@
+.course-page-header {
+  text-align: center;
+  img {
+    background: $primary;
+    border-radius: 60px;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-weight: 600;
+    font-size: 85px;
+    margin: 0;
+  }
+  h6 {
+    font-size: 14px;
+    margin: -12px 0 20px 0;
+    color: $secondary-lighter;
+  }
+  p {
+    margin-bottom: 20px;
+    color: $secondary-lighter;
+  }
+}
+
+.category-info-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28px;
+  font-weight: 600;
+  &:first-child{
+      padding-bottom: 20px;
+  }
+}
+
+.p-r{
+    padding-right: 20px;
+}
+
+.p-l{
+    padding-left: 20px;
+}

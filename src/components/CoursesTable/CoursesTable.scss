@@ -22,6 +22,9 @@ table {
   tbody {
     font-size: 20px;
     text-align: left;
+    .link {
+      display: contents;
+    }
     tr {
       &:nth-child(even) {
         background-color: #f3f3f3;
@@ -45,7 +48,7 @@ table {
         img {
           width: 40px;
           height: auto;
-          vertical-align:middle;
+          vertical-align: middle;
         }
       }
     }
