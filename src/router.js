@@ -14,37 +14,42 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: Home
     },
     {
       path: '/kursy',
       name: 'courses',
-      component: () => import('./views/CoursesPage/CoursesPage.vue'),
+      component: () => import('./views/CoursesPage/CoursesPage.vue')
     },
     {
       path: '/kursy/:name',
       name: 'course',
-      component: () => import('./views/CoursePage/CoursePage.vue'),
+      component: () => import('./views/CoursePage/CoursePage.vue')
     },
     {
       path: '/instruktorzy',
       name: 'instructos',
-      component: () => import('./views/InstructorsPage/InstructorsPage.vue'),
+      component: () => import('./views/InstructorsPage/InstructorsPage.vue')
+    },
+    {
+      path: '/instruktorzy/:name',
+      name: 'instrucor',
+      component: () => import('./views/InstructorPage/InstructorPage.vue')
     },
     {
       path: '/pojazdy',
       name: 'vehicles',
-      component: () => import('./views/VehiclesPage/VehiclesPage.vue'),
+      component: () => import('./views/VehiclesPage/VehiclesPage.vue')
     },
     {
       path: '/projekty',
       name: 'projects',
-      component: () => import('./views/ProjectsPage/ProjectsPage.vue'),
+      component: () => import('./views/ProjectsPage/ProjectsPage.vue')
     },
     {
       path: '/kontakt',
       name: 'contact',
-      component: () => import('./views/Contact/Contact.vue'),
-    },
-  ],
+      component: () => import('./views/Contact/Contact.vue')
+    }
+  ]
 });
