@@ -2,6 +2,10 @@
   background: $secondary;
   padding: 50px 0;
   color: $secondary-lighter;
+  .socials{
+    display: flex;
+    justify-content: flex-end;
+  }
   &-row {
     display: flex;
     justify-content: space-between;
@@ -20,15 +24,17 @@
   &-links {
     display: flex;
     &-item {
-      margin: 0 0 0 15px;
+      margin: 0 0 0 0;
       a {
         display: block;
-        padding: 10px;
+        padding: 0 0 0 15px;
         font-size: 14px;
         text-transform: uppercase;
         font-weight: 600;
         transition: color 0.25s;
-        &:hover, &:focus, &.router-link-exact-active {
+        &:hover,
+        &:focus,
+        &.router-link-exact-active {
           color: rgb(179, 179, 179);
         }
       }
@@ -47,8 +53,9 @@
         }
       }
       a {
-        &:hover, &:focus {
-          svg path  {
+        &:hover,
+        &:focus {
+          svg path {
             fill: rgb(179, 179, 179);
           }
         }
@@ -87,7 +94,6 @@
     }
     &-socials {
       width: 100%;
-      justify-content: center;
       &-item:first-of-type {
         margin: 0;
       }
