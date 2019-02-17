@@ -7,26 +7,16 @@
         <div>
           <h3 class="section-title">Trwające projekty</h3>
           <el-row :gutter="50">
-            <el-col :span="12">
-              <Project/>
-            </el-col>
-            <el-col :span="12">
-              <Project/>
-            </el-col>
-            <el-col :span="12">
-              <Project/>
-            </el-col>
-            <el-col :span="12">
-              <Project/>
+            <el-col :span="12" v-for="(project, index) in enabledProjects" :key="index" >
+              <Project :project="project"  />
             </el-col>
           </el-row>
+        </div>
+        <div>
           <h3 class="section-title">Zakończone projekty</h3>
           <el-row :gutter="50">
-            <el-col :span="12">
-              <Project disabled="true"/>
-            </el-col>
-            <el-col :span="12">
-              <Project disabled="true"/>
+            <el-col :span="12" v-for="(project, index) in disabledProjects" :key="index" >
+              <Project :project="project"  />
             </el-col>
           </el-row>
         </div>
@@ -39,12 +29,33 @@
 <script>
 import Categories from "../../components/Categories/Categories";
 import Project from "../../components/Project/Project";
+import axios from "axios";
+import { API } from '@/main.js';
 
 export default {
   name: "projectsPage",
+  data: () => ({
+    projects: []
+  }),
   components: {
     Categories,
     Project
+  },
+  computed: {
+    disabledProjects() {
+      return this.projects.filter(project => project.status === false);
+    },
+    enabledProjects() {
+      return this.projects.filter(project => project.status === true);
+    }
+  },
+  async created() {
+    try {
+      const response = await axios.get(`${API}/projects`);
+      response.data ? (this.projects = response.data) : false;
+    } catch(error) {
+      console.log(error);
+    }
   }
 };
 </script>

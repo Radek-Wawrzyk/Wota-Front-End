@@ -11,18 +11,18 @@
           <br>Poniżej obok sylwetek naszych instruktorów znajdują się ikony informujące o zakresie kategorii szkoleń.
         </p>
         <ul class="instructors-list">
-          <li class="instructor">
+          <li class="instructor" v-for="instructor in instructors" :key="instructor._id">
             <figure class="instructor-img">
               <img
                 src="https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg"
-                alt="Marek Franiak"
+                :alt="instructor.fullname"
               >
             </figure>
-            <h2 class="instructor-title">Marek Franiak</h2>
+            <h2 class="instructor-title">{{instructor.fullname}}</h2>
             <ul class="instructor-stats">
               <li class="instructor-stats-item">
                 <p>Kategorie</p>
-                <span>a1, a ,b1, b</span>
+                <span v-for="(category, index) in instructor.categories" :key="index">{{category}},</span>
               </li>
               <li class="instructor-stats-item">
                 <p>Średnia ocen:</p>
@@ -33,95 +33,35 @@
                 <span>18</span>
               </li>
             </ul>
-            <router-link class="btn btn-primary" to="/instruktorzy/marek-franiak">Więcej</router-link>
-          </li>
-          <li class="instructor">
-            <figure class="instructor-img">
-              <img
-                src="https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg"
-                alt="Marek Franiak"
-              >
-            </figure>
-            <h2 class="instructor-title">Marek Franiak</h2>
-            <ul class="instructor-stats">
-              <li class="instructor-stats-item">
-                <p>Kategorie</p>
-                <span>a1, a ,b1, b</span>
-              </li>
-              <li class="instructor-stats-item">
-                <p>Średnia ocen:</p>
-                <span>4.5/5</span>
-              </li>
-              <li class="instructor-stats-item">
-                <p>Ilość opinii:</p>
-                <span>18</span>
-              </li>
-            </ul>
-            <router-link class="btn btn-primary" to="/instruktorzy/marek-franiak">Więcej</router-link>
-          </li>
-          <li class="instructor">
-            <figure class="instructor-img">
-              <img
-                src="https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg"
-                alt="Marek Franiak"
-              >
-            </figure>
-            <h2 class="instructor-title">Marek Franiak</h2>
-            <ul class="instructor-stats">
-              <li class="instructor-stats-item">
-                <p>Kategorie</p>
-                <span>a1, a ,b1, b</span>
-              </li>
-              <li class="instructor-stats-item">
-                <p>Średnia ocen:</p>
-                <span>4.5/5</span>
-              </li>
-              <li class="instructor-stats-item">
-                <p>Ilość opinii:</p>
-                <span>18</span>
-              </li>
-            </ul>
-            <router-link class="btn btn-primary" to="/instruktorzy/marek-franiak">Więcej</router-link>
-          </li>
-          <li class="instructor">
-            <figure class="instructor-img">
-              <img
-                src="https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg"
-                alt="Marek Franiak"
-              >
-            </figure>
-            <h2 class="instructor-title">Marek Franiak</h2>
-            <ul class="instructor-stats">
-              <li class="instructor-stats-item">
-                <p>Kategorie</p>
-                <span>a1, a ,b1, b</span>
-              </li>
-              <li class="instructor-stats-item">
-                <p>Średnia ocen:</p>
-                <span>4.5/5</span>
-              </li>
-              <li class="instructor-stats-item">
-                <p>Ilość opinii:</p>
-                <span>18</span>
-              </li>
-            </ul>
-            <router-link class="btn btn-primary" to="/instruktorzy/marek-franiak">Więcej</router-link>
+            <router-link class="btn btn-primary" :to="`/instruktorzy/${instructor._id}`">Więcej</router-link>
           </li>
         </ul>
       </section>
     </div>
     <Sale></Sale>
-    <div class="empty-section"></div>
   </main>
 </template>
 
 <script>
 import Sale from "../../components/Sale/Sale.vue";
+import axios from "axios";
+import { API } from '@/main.js';
 
 export default {
   name: "instructorsPage",
+  data: () => ({
+    instructors: []
+  }),
   components: {
     Sale
+  },
+  async created() {
+    try {
+      const response = await axios.get(`${API}/instructors`);
+      response.data ? (this.instructors = response.data) : false;
+    } catch(error) {
+      console.log(error);
+    }
   }
 };
 </script>

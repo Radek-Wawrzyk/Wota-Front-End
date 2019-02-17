@@ -32,9 +32,10 @@ export default new Router({
       component: () => import('./views/InstructorsPage/InstructorsPage.vue')
     },
     {
-      path: '/instruktorzy/:name',
-      name: 'instrucor',
-      component: () => import('./views/InstructorPage/InstructorPage.vue')
+      path: '/instruktorzy/:id',
+      name: 'instuctor',
+      component: () => import('./views/InstructorPage/InstructorPage.vue'),
+      props: true
     },
     {
       path: '/pojazdy',
@@ -45,6 +46,12 @@ export default new Router({
       path: '/projekty',
       name: 'projects',
       component: () => import('./views/ProjectsPage/ProjectsPage.vue')
+    },
+    {
+      path: '/projekty/:id',
+      name: 'project',
+      component: () => import('./views/ProjectPage/ProjectPage.vue'),
+      props: true
     },
     {
       path: '/kontakt',

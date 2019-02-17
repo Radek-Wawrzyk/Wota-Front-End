@@ -21,7 +21,7 @@
             </div>
           </el-col>
         </el-row>
-        <p class="no-results" v-else>Niestety obecnie nie posiadamy żadnych pojazdów</p>
+        <p class="no-results" v-else >Niestety obecnie nie posiadamy żadnych pojazdów</p>
       </div>
     </section>
     <Categories></Categories>
