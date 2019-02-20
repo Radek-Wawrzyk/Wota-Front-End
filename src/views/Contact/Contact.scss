@@ -6,32 +6,6 @@
     width: 100%;
     margin: 0 auto;
   }
-  &-tile {
-    width: auto;
-    padding: 0 30px;
-    &-title {
-      color: $primary;
-      font-size: 30px;
-    }
-    &-list {
-      margin: 20px 0 0 0;
-      &-item {
-        display: flex;
-        align-items: center;
-        margin: 0 0 18px 0;
-        color: $secondary-lighter;
-        font-size: 20px;
-        svg {
-          width: 20px;
-          height: auto;
-          margin: 0 10px 0 0;
-        }
-        &:first-child svg {
-          transform: rotate(90deg);
-        }
-      }
-    }
-  }
 }
 
 //Media
@@ -40,13 +14,5 @@
   .contact-info {
     flex-wrap: wrap;
     text-align: center;
-  }
-  .contact-tile {
-    width: 100%;
-    margin: 0 0 50px 0;
-    padding: 0 15px;
-    &-list-item {
-      justify-content: center;
-    }
   }
 }
