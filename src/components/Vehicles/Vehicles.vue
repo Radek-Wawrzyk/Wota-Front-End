@@ -3,37 +3,16 @@
     <div class="container">
       <h2 class="vehicles-title">Pojazdy</h2>
       <el-row :gutter="50">
-        <el-col :md="8">
+        <el-col :md="8" v-for="vehicle in vehicles" :key="vehicle._id">
           <div class="vehicle">
-            <h4 class="vehicle-title">Toyota Yaris Automat</h4>
-            <span class="vehicle-category">Kategorie: B1, B</span>
+            <h4 class="vehicle-title">{{vehicle.title}}</h4>
+            <span class="vehicle-category">Kategorie: 
+              <span class="vehicle-category-item" v-for="(category, index) in vehicle.categories" :key="index">{{category}},</span>
+            </span>
             <img
               class="vehicle-img"
-              :src="require('../../assets/img/pojazdy/B-Toyota-Yaris-Automat.png')"
-              alt="Toyota Yaris Automat"
-            >
-          </div>
-        </el-col>
-        <el-col :md="8">
-          <div class="vehicle">
-            <h4 class="vehicle-title">Yamaha YBR 125</h4>
-            <span class="vehicle-category">Kategorie: B1</span>
-            <img
-              class="vehicle-img"
-              :src="require('../../assets/img/pojazdy/A1-Yamaha-YBR-125.png')"
-              alt="Yamaha YBR 125"
-            >
-          </div>
-        </el-col>
-
-        <el-col :md="8">
-          <div class="vehicle">
-            <h4 class="vehicle-title">Yamaha MT 07</h4>
-            <span class="vehicle-category">Kategorie: A</span>
-            <img
-              class="vehicle-img"
-              :src="require('../../assets/img/pojazdy/A-Yamaha-MT-07.png')"
-              alt="Yamaha MT 07"
+              :src="vehicle.image"
+              :alt="vehicle.title"
             >
           </div>
         </el-col>
@@ -43,8 +22,22 @@
 </template>
 
 <script>
+import axios from "axios";
+import { API } from '@/main.js';
+
 export default {
-  name: "Vehicles"
+  name: "Vehicles",
+  data: () => ({
+    vehicles: []
+  }),
+  async created() {
+    try {
+      const response = await axios.get(`${API}/vehicles`);
+      response.data ? this.vehicles = response.data.slice(1) : false;
+    } catch {
+      console.log(response.message);
+    }
+  }
 };
 </script>
 

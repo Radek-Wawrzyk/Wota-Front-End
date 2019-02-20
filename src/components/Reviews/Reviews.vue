@@ -5,7 +5,7 @@
       <carousel class="reviews-slider" :per-page="1" :autoplay="true" :autoplayHoverPause="true" :paginationEnabled="false"
         :navigationEnabled="true" :navigationNextLabel="this.next" :navigationPrevLabel="this.prev" 
       >
-        <slide class="testimonial" v-for="testimonial in testimonials" :key="testimonial.id">
+        <slide class="testimonial" v-for="(testimonial, index) in testimonials" :key="index">
           <figure class="testimonial-img">
             <img :src="testimonial.img" :alt="testimonial.author" />
           </figure>
@@ -20,9 +20,11 @@
 </template>
 
 <script>
+import axios from "axios";
+import { API } from '@/main.js';
 
 export default {
-  name: 'Slider',
+  name: 'Reviews',
   data: () => ({
     testimonials: [
       {
@@ -45,6 +47,14 @@ export default {
     next: '<svg aria-hidden="true" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg>'
 
   }),
+  // async created() {
+  //   try {
+  //     const response = await axios.get(`${API}/reviews`);
+  //     response.data ? this.testimonials = response.data : false;
+  //   } catch(error) {
+  //     console.log(error.message);
+  //   }
+  // }
 }
 
 </script>
