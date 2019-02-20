@@ -2,11 +2,11 @@
   <li class="comment-wrapper">
     <div class="comment-header">
       <div>{{comment.rate}}</div>
-      <div class="comment-title">{{comment.name}}</div>
-      <div>{{comment.date}}</div>
+      <h3 class="comment-title">{{comment.name}}</h3>
+      <div class="comment-date">{{comment.date}}</div>
     </div>
     <div class="comment-body">
-      <h5>{{comment.title}}</h5>
+      <h4>{{comment.title}}</h4>
       <p>{{comment.subtitle}}</p>
     </div>
   </li>
@@ -15,9 +15,10 @@
 <script>
 export default {
   name: "comment",
-  props: ["comment"]
+  props: {
+    comment: Object
+  }
 };
 </script>
-
 
 <style lang="scss" scoped src="./Comment.scss" />

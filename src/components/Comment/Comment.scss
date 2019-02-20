@@ -10,25 +10,58 @@
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 20px;
-    div{
-        width: 33%;
+    div {
+      width: 33%;
     }
-    .comment-title{
-        text-align: center;
+    .comment-date {
+      font-size: 14px;
     }
-    div:last-child{
-        text-align: right;
+    .comment-title {
+      text-align: center;
+      font-size: 20px;
+    }
+    div:last-child {
+      text-align: right;
     }
   }
   .comment-body {
     text-align: center;
-    h5 {
+    h4 {
       font-weight: 600;
       margin-bottom: 15px;
+      font-size: 18px;
     }
     p {
       color: $secondary;
       margin-bottom: 30px;
+    }
+  }
+}
+
+//Media
+
+@media screen and (max-width: 576px) {
+  .comment-wrapper {
+    padding: 15px;
+    .comment-header {
+      flex-wrap: wrap;
+      div {
+        width: 100%;
+        text-align: left;
+        &.comment-title {
+          text-align: left;
+        }
+        &:last-child {
+          text-align: left;
+        }
+       
+      }
+    }
+    .comment-body {
+      text-align: left;
+      p {
+        margin: 0;
+      }
     }
   }
 }

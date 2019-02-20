@@ -48,7 +48,7 @@
                 class="input-transparent-white"
               ></el-input>
             </el-col>
-            <el-col :md="24" class="form-row">
+            <el-col :md="24" class="form-row form-rodo">
               <el-radio v-model="credentials.rodo">Rodo i regulamin Ullamco mollit sint quis esse amet.</el-radio>
             </el-col>
             <el-col :md="24" class="submit-btn">
@@ -104,6 +104,5 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" src="./RateForm.scss" />
