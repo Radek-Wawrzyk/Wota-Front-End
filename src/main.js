@@ -1,6 +1,7 @@
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import VueCarousel from 'vue-carousel';
+import VeeValidate from 'vee-validate';
 
 import Vue from 'vue';
 import router from './router';
@@ -15,6 +16,7 @@ import SubHeader from './components/SubHeader/SubHeader.vue';
 //Use Libraries
 Vue.use(VueCarousel);
 Vue.use(ElementUI);
+Vue.use(VeeValidate);
 
 //Global components
 Vue.component('SubHeader', SubHeader);
