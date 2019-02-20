@@ -7,6 +7,7 @@
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 20px;
   position: relative;
   margin-bottom: 25px;
@@ -19,17 +20,28 @@
     bottom: 0;
     text-align: center;
     position: absolute;
-    width: 100%;
     bottom: 0;
     background-color: rgba(255,255,255, 0.5);
-    h4{
+    h4 {
       margin-top: 40px;
       margin-left: 40px;
       margin-right: 40px;
       font-weight: 600;
     }
-    h4, .btn{
+    h4, .btn {
       margin-bottom: 50px;
+    }
+  }
+}
+
+//Media
+
+@media screen and (max-width: 576px) {
+  .project-wrapper {
+    height: 300px;
+    background-size: cover;
+    .project-description {
+      height: 100%;
     }
   }
 }

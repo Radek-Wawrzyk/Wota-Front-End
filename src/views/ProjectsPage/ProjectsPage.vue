@@ -7,18 +7,20 @@
         <div>
           <h3 class="section-title">Trwające projekty</h3>
           <el-row :gutter="50">
-            <el-col :span="12" v-for="(project, index) in enabledProjects" :key="index" >
+            <el-col :md="12"  v-for="(project, index) in enabledProjects" :key="index" >
               <Project :project="project"  />
             </el-col>
           </el-row>
+          <p class="no-results" v-if="enabledProjectsLenght === 0">Brak trwających projektów</p>
         </div>
         <div>
           <h3 class="section-title">Zakończone projekty</h3>
           <el-row :gutter="50">
-            <el-col :span="12" v-for="(project, index) in disabledProjects" :key="index" >
+            <el-col :md="12" v-for="(project, index) in disabledProjects" :key="index" >
               <Project :project="project"  />
             </el-col>
           </el-row>
+          <p class="no-results" v-if="disabledProjectsLenght === 0">Brak zakończonych projektów</p>
         </div>
       </div>
     </section>
@@ -44,6 +46,12 @@ export default {
   computed: {
     disabledProjects() {
       return this.projects.filter(project => project.status === false);
+    },
+    disabledProjectsLenght() {
+      return this.disabledProjects.length;
+    },
+    enabledProjectsLenght() {
+      return this.enabledProjects.length;
     },
     enabledProjects() {
       return this.projects.filter(project => project.status === true);
