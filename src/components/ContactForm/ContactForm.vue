@@ -85,7 +85,7 @@ export default {
     ]
   }),
   props: {
-    title: Object
+    title: String
   },
   methods: {
     async submitForm() {
