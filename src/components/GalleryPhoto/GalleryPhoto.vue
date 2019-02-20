@@ -1,13 +1,19 @@
 <template>
-  <div class="gallery-photo">
+<a :href="image">
+  <div class="gallery-photo" :style="image  ? `background-image: url(${image})` : ``" >
     <div class="gallery-photo-title">{{title}}</div>
   </div>
+</a>
+ 
 </template>
 
 <script>
 export default {
   name: "galleryPhoto",
-  props: ['title'],
+  props: {
+    title: String,
+    image: String
+  }
 };
 </script>
 
