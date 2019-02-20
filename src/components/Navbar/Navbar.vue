@@ -18,7 +18,7 @@
         <router-link class="navigation-menu-item-link" to="/kursy">Kursy</router-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="instruktorzy">Instruktorzy</router-link>
+        <router-link class="navigation-menu-item-link" to="/instruktorzy">Instruktorzy</router-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
         <router-link class="navigation-menu-item-link" to="/pojazdy">Pojazdy</router-link>
