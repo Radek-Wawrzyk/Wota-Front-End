@@ -2,7 +2,7 @@
   <div class="profile-wrapper">
     <figure class="instructor-img">
       <img
-        src="https://appworksinc.com/wp-content/uploads/2013/05/Team-Member-3.jpg"
+        :src="instructor.avatar"
         :alt="instructor.fullname"
       >
     </figure>
@@ -32,9 +32,9 @@
 <script>
 export default {
   name: "InstructorProfile",
-    props: {
-      instructor: Object
-    }
+  props: {
+    instructor: Object
+  }
 };
 </script>
 
