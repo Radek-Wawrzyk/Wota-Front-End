@@ -53,10 +53,24 @@ import Gallery from "../../components/Gallery/Gallery";
 
 export default {
   name: "coursePage",
+  data: () => ({
+    course: {}
+  }),
+  props: {
+    id: String
+  },
   components: {
     Sale,
     Gallery,
     CoursesTable
+  },
+  async created() {
+    try {
+      const response = await axios.get(`${API}/courses/${this.id}`);
+      response.data ? this.course = response.data : false;
+    } catch(error) {
+      console.log(error.message);
+    }
   }
 };
 </script>

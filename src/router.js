@@ -22,9 +22,10 @@ export default new Router({
       component: () => import('./views/CoursesPage/CoursesPage.vue')
     },
     {
-      path: '/kursy/:name',
+      path: '/kursy/:id',
       name: 'course',
-      component: () => import('./views/CoursePage/CoursePage.vue')
+      component: () => import('./views/CoursePage/CoursePage.vue'),
+      props: true
     },
     {
       path: '/instruktorzy',

@@ -1,5 +1,5 @@
 <template>
-<a :href="image">
+<a :href="image" class="gallery-link">
   <div class="gallery-photo" :style="image  ? `background-image: url(${image})` : ``" >
     <div class="gallery-photo-title">{{title}}</div>
   </div>

@@ -1,7 +1,7 @@
 table {
   width: 100%;
-  margin-bottom: 100px;
   border-collapse: separate;
+  margin: 0 0 20px 0;
   thead {
     background-color: $primary;
     color: white;
@@ -26,11 +26,12 @@ table {
       display: contents;
     }
     tr {
+      transition: background 0.1s;
       &:nth-child(even) {
         background-color: #f3f3f3;
       }
       &:hover {
-        background-color: #f5f7fa;
+        background-color: #dd290021; 
         cursor: pointer;
       }
       th {
@@ -52,5 +53,13 @@ table {
         }
       }
     }
+  }
+}
+
+//Media
+
+@media screen and (max-width: 992px) {
+  .table-responsive {
+    overflow-X: auto;
   }
 }
