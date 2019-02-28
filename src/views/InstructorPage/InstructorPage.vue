@@ -2,11 +2,11 @@
   <main>
     <SubHeader title="Instruktor"></SubHeader>
     <div class="container intructor-profile-wrapper">
-      <InstructorProfile :instructor="instructor.instructor"/>
+      <InstructorProfile :instructor="instructor.instructor" :comments="comments"/>
     </div>
-    <RateForm/>
+    <RateForm :instructor="instructor.instructor"/>
     <div class="container">
-      <Comments/>
+      <Comments :comments="comments"/>
     </div>
   </main>
 </template>
@@ -16,12 +16,13 @@ import Comments from "../../components/Comments/Comments.vue";
 import RateForm from "../../components/RateForm/RateForm.vue";
 import InstructorProfile from "../../components/InstructorProfile/InstructorProfile.vue";
 import axios from "axios";
-import { API } from '@/main.js';
+import { API } from "@/main.js";
 
 export default {
   name: "instructorPage",
   data: () => ({
-    instructor: {}
+    instructor: {},
+    comments: []
   }),
   components: {
     Comments,
@@ -34,8 +35,10 @@ export default {
   async created() {
     try {
       const response = await axios.get(`${API}/instructors/${this.id}`);
+      const { data } = await axios.get(`${API}/rate/${this.id}`);
+      // this.comments = data;
       response.data ? (this.instructor = response.data) : false;
-    } catch(error) {
+    } catch (error) {
       console.log(error);
     }
   }

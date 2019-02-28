@@ -6,9 +6,9 @@
         :navigationEnabled="true" :navigationNextLabel="this.next" :navigationPrevLabel="this.prev" 
       >
         <slide class="testimonial" v-for="(testimonial, index) in testimonials" :key="index">
-          <figure class="testimonial-img">
+          <!-- <figure class="testimonial-img">
             <img :src="testimonial.img" :alt="testimonial.author" />
-          </figure>
+          </figure> -->
           <p class="testimonial-content">{{testimonial.content}}</p>
           <footer class="testimonial-author">
             Opinia Instruktora: <span>{{testimonial.author}}</span>

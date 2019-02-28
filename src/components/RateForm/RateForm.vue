@@ -2,15 +2,22 @@
   <main>
     <div class="rate-form-wrapper">
       <h2 class="section-title">Oceń instruktora</h2>
+      <h3 class="sub" v-if="this.submited">Dziękujemy za ocene instruktora</h3>
+      <!-- {{this.credentials}} -->
+      <!-- {{this.instructor._id}} -->
       <div class="container">
-        <el-form @submit.prevent="submit">
+        <el-form>
           <el-row :gutter="30">
             <el-col :md="12" class="form-row">
-              <el-input v-model="credentials.name" placeholder="Imię" class="input-transparent-white"></el-input>
+              <el-input
+                v-model="credentials.name"
+                placeholder="Imię"
+                class="input-transparent-white"
+              ></el-input>
             </el-col>
             <el-col :md="12" class="form-row">
               <el-input
-                v-model="credentials.surname"
+                v-model="credentials.surrname"
                 placeholder="Nazwisko"
                 class="input-transparent-white"
               ></el-input>
@@ -23,7 +30,11 @@
               ></el-input>
             </el-col>
             <el-col :md="12" class="form-row">
-              <el-select v-model="credentials.rate" placeholder="Twoja ocena" class="input-transparent-white">
+              <el-select
+                v-model="credentials.rate"
+                placeholder="Twoja ocena"
+                class="input-transparent-white"
+              >
                 <el-option
                   v-for="item in options"
                   :key="item.value"
@@ -44,12 +55,15 @@
                 type="textarea"
                 :rows="8"
                 placeholder="Treść wiadomości..."
-                v-model="credentials.message"
+                v-model="credentials.comment"
                 class="input-transparent-white"
               ></el-input>
             </el-col>
+            <!-- {{this.credentials.rodo || 'Brak'}} -->
             <el-col :md="24" class="form-row form-rodo">
-              <el-radio v-model="credentials.rodo">Rodo i regulamin Ullamco mollit sint quis esse amet.</el-radio>
+              <el-radio
+                v-model="credentials.rodo"
+              >Rodo i regulamin Ullamco mollit sint quis esse amet.</el-radio>
             </el-col>
             <el-col :md="24" class="submit-btn">
               <button class="btn btn-outline-white" @click="submit" type="submit">Dodaj ocene</button>
@@ -62,17 +76,23 @@
 </template>
 
 <script>
+import axios from "axios";
+import { API } from "@/main.js";
 export default {
   name: "rateform",
+  props: {
+    instructor: Object
+  },
   data: () => ({
+    submited: false,
     credentials: {
       name: "",
-      surname: "",
+      surrname: "",
       email: "",
       rate: "",
-      rodo: "",
+      rodo: true,
       title: "",
-      message: ""
+      comment: ""
     },
     options: [
       {
@@ -98,8 +118,28 @@ export default {
     ]
   }),
   methods: {
-    submit() {
-      alert(`Form submited!`);
+    async submit(e) {
+      e.preventDefault();
+      try {
+        const fullForm = Object.assign({}, this.credentials, {
+          instructorId: this.instructor._id,
+          rodo: true
+        });
+
+        const response = await axios.post(`${API}/rate`, fullForm);
+
+        if (response.status === 200) {
+          this.submited = true;
+          this.credentials.name = "";
+          this.credentials.surrname = "";
+          this.credentials.email = "";
+          this.credentials.rate = "";
+          this.credentials.title = "";
+          this.credentials.comment = "";
+        }
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 };

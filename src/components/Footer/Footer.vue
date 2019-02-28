@@ -88,7 +88,7 @@
           </li>
         </ul>
       </div>
-      <p class="footer-copyright">
+      <!-- <p class="footer-copyright">
         Website by
         <a
           href="http://radek-wawrzyk.pl/"
@@ -100,7 +100,7 @@
           title="Hubert Front End developer"
           aria-label="Hubert Front End developer"
         >Hubert</a>
-      </p>
+      </p> -->
     </div>
   </footer>
 </template>

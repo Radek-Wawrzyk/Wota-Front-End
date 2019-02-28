@@ -1,6 +1,7 @@
 <template>
   <section class="instructors">
     <h2 class="instructors-title">Instruktorzy</h2>
+    <h4 v-if="instructors.length === 0" class="nexist">Lista instruktorów jest pusta</h4>
     <carousel
       class="instructors-slider"
       :per-page="3"

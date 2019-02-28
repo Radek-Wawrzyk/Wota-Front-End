@@ -2,6 +2,7 @@
   <section class="vehicles">
     <div class="container">
       <h2 class="vehicles-title">Pojazdy</h2>
+      <h4 v-if="vehicles.length === 0" class="nexist">Lista pojazdów jest pusta</h4>
       <el-row :gutter="50">
         <el-col :md="8" v-for="vehicle in vehicles" :key="vehicle._id">
           <div class="vehicle">
