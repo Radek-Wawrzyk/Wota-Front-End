@@ -2,6 +2,7 @@
   <section class="reviews">
     <div class="container">
       <h2 class="reviews-title">Opinie</h2>
+      <h4 class="nexist">Brak opinii</h4>
       <carousel
         class="reviews-slider"
         :per-page="1"
@@ -11,6 +12,7 @@
         :navigationEnabled="true"
         :navigationNextLabel="this.next"
         :navigationPrevLabel="this.prev"
+        v-if="this.testimonials.length > 0"
       >
         <slide class="testimonial" v-for="(testimonial, index) in testimonials" :key="index">
           <!-- <figure class="testimonial-img">
