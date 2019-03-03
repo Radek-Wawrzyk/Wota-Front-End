@@ -1,11 +1,11 @@
 <template>
   <div
     class="project-wrapper"
-    :style="{ 'background-image': 'url(http://placeimg.com/640/480/arch)' }"
+    :style="{ 'background-image': `url(${project.image})` }"
     :class="{ disabled: disabled }"
   >
     <div class="project-description">
-      <h4>Szkolenia na kierowców dla kadr MMŚP z brany transportowej</h4>
+      <h4>{{project.title}}</h4>
       <router-link class="btn btn-primary" :to="`/projekty/${project._id}`">Więcej</router-link>
     </div>
   </div>

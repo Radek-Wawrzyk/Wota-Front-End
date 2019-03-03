@@ -13,16 +13,16 @@
         </tr>
       </thead>
       <tbody>
-        <router-link :to="`/kursy/${course._id}`" :title="course.title" :aria-label="course.title" class="link" v-for="course in courses" :key="course._id">
+        <router-link :to="`/kursy/${course._id}`" :title="course.title" :aria-label="course.title" class="link" v-for="course in this.courses" :key="course._id">
           <tr>
             <th>
               <img :src="course.icon" :alt="course.title">
             </th>
             <th>{{course.title}}</th>
-            <th>{{course.parameters.practise}}</th>
-            <th>{{course.parameters.teory}}</th>
-            <th>{{course.parameters.additional.length > 0 ? course.parameters.additional : 'Brak'}}</th>
-            <th>{{course.parameters.price}}</th>
+            <th>{{course.practise}}</th>
+            <th>{{course.teory}}</th>
+            <th>{{course.additional.length > 0 ? course.additional : 'Brak'}}</th>
+            <th>{{course.price}}</th>
             <th class="table-cell-button">
               <i class="el-icon-caret-right"></i>
             </th>
@@ -46,6 +46,7 @@ export default {
     try {
       const response = await axios.get(`${API}/courses`);
       response.data ? (this.courses = response.data) : false;
+      console.log(this.courses);
     } catch(error) {
       console.log(error);
     }

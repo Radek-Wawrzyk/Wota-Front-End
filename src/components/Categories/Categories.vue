@@ -77,7 +77,7 @@
         </li>
       </ul>
       <router-link
-        to="kategorie"
+        to="kursy"
         aria-label="Kategorie"
         class="btn btn-outline-white"
       >Zobacz wszystkie ></router-link>

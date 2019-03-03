@@ -14,11 +14,11 @@
             <el-row>
               <el-col :span="24" class="category-info-details p-r">
                 <div>Cena:</div>
-                <div>{{course.parameters.price}}</div>
+                <div>{{course.price}}</div>
               </el-col>
               <el-col :span="24" class="category-info-details p-r">
                 <div>Teoria:</div>
-                <div>{{course.parameters.teory}}</div>
+                <div>{{course.theory}}</div>
               </el-col>
             </el-row>
           </el-col>
@@ -26,18 +26,18 @@
             <el-row>
               <el-col :span="24" class="category-info-details p-l">
                 <div>Praktyka:</div>
-                <div>{{course.parameters.price}}</div>
+                <div>{{course.price}}</div>
               </el-col>
               <el-col :span="24" class="category-info-details p-l">
                 <div>Jazda dodatkowa:</div>
-                <div>{{course.parameters.additional}}</div>
+                <div>{{course.additional}}</div>
               </el-col>
             </el-row>
           </el-col>
         </el-row>
       </div>
       <div>
-        <CoursesTable/>
+        <CoursesTable :schedule="JSON.parse(course.schedule)"/>
       </div>
     </div>
     <Sale/>
@@ -52,7 +52,7 @@ import Sale from "../../components/Sale/Sale.vue";
 import CoursesTable from "../../components/CourseTable/CourseTable";
 import Gallery from "../../components/Gallery/Gallery";
 import axios from "axios";
-import { API } from '@/main.js';
+import { API } from "@/main.js";
 
 export default {
   name: "coursePage",
@@ -71,7 +71,7 @@ export default {
     try {
       const response = await axios.get(`${API}/courses/${this.id}`);
       response.data ? (this.course = response.data.course) : false;
-    } catch(error) {
+    } catch (error) {
       console.log(error.message);
     }
   }
