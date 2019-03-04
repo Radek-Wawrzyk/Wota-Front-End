@@ -22,7 +22,7 @@ Vue.use(VeeValidate);
 Vue.component('SubHeader', SubHeader);
 
 //API
-export const API = Vue.prototype.$API = 'http://hubertkuzdak.com';
+export const API = Vue.prototype.$API = 'https://hubertkuzdak.com';
 
 Vue.config.productionTip = false;
 
