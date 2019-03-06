@@ -28,7 +28,7 @@
       </div>
     </div>
     <div>
-      <p class="muted">{{instructor.description}}</p>
+      <p class="muted" v-if="instructor.description !== 'Brak'">{{instructor.description}}</p>
     </div>
   </div>
 </template>

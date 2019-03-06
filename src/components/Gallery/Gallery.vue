@@ -3,10 +3,10 @@
     <h2 class="section-title">Galeria</h2>
     <el-row :gutter="20">
       <el-col :md="16">
-        <GalleryPhoto title="Plac manewrowy" :image="galleryPlace[0].image" />
+        <GalleryPhoto title="Plac manewrowy" v-if="galleryPlace[0]" :image="galleryPlace[0].image" />
       </el-col>
       <el-col :md="8">
-        <GalleryPhoto title="Sala szkoleniowa" :image="galleryHall[0].image"/>
+        <GalleryPhoto title="Sala szkoleniowa" v-if="galleryHall[0]" :image="galleryHall[0].image"/>
       </el-col>
     </el-row>
     <el-row :gutter="20">
@@ -41,6 +41,8 @@ export default {
   async created() {
     try {
       const response = await axios.get(`${API}/galery`);
+      console.log(response.data);
+      
       response.data ? (this.gallery = response.data) : false;
     } catch(error) {
       console.log(error);

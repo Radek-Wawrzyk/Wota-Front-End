@@ -10,7 +10,7 @@
       <ContactTile :info="tiles[3]"></ContactTile>
     </section>
     <ContactForm title="Napisz do nas"/>
-    <Map :withRed="true"/>
+    <Map/>
   </main>
 </template>
 

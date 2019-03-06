@@ -13,15 +13,22 @@
         </tr>
       </thead>
       <tbody>
-        <router-link :to="`/kursy/${course._id}`" :title="course.title" :aria-label="course.title" class="link" v-for="course in this.courses" :key="course._id">
+        <router-link
+          :to="`/kursy/${course._id}`"
+          :title="course.title"
+          :aria-label="course.title"
+          class="link"
+          v-for="course in this.courses"
+          :key="course._id"
+        >
           <tr>
             <th>
               <img :src="course.icon" :alt="course.title">
             </th>
             <th>{{course.title}}</th>
             <th>{{course.practise}}</th>
-            <th>{{course.teory}}</th>
-            <th>{{course.additional.length > 0 ? course.additional : 'Brak'}}</th>
+            <th>{{course.theory}}</th>
+            <th>{{course.comments}}</th>
             <th>{{course.price}}</th>
             <th class="table-cell-button">
               <i class="el-icon-caret-right"></i>
@@ -30,12 +37,13 @@
         </router-link>
       </tbody>
     </table>
+    {{course}}
   </div>
 </template>
 
 <script>
-import { API } from '@/main.js';
-import axios from 'axios';
+import { API } from "@/main.js";
+import axios from "axios";
 
 export default {
   name: "coursesTable",
@@ -47,7 +55,7 @@ export default {
       const response = await axios.get(`${API}/courses`);
       response.data ? (this.courses = response.data) : false;
       console.log(this.courses);
-    } catch(error) {
+    } catch (error) {
       console.log(error);
     }
   }

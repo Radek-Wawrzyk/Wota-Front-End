@@ -3,7 +3,7 @@
     <SubHeader title="Kurs"></SubHeader>
     <div class="container">
       <header class="course-page-header">
-        <img :src="course.icon" :alt="course.title">
+        <!-- <img :src="course.icon" :alt="course.title"> -->
         <h1>{{course.title}}</h1>
         <h6>Kategoria</h6>
         <p>{{course.description}}</p>
@@ -26,7 +26,7 @@
             <el-row>
               <el-col :span="24" class="category-info-details p-l">
                 <div>Praktyka:</div>
-                <div>{{course.price}}</div>
+                <div>{{course.practise}}</div>
               </el-col>
               <el-col :span="24" class="category-info-details p-l">
                 <div>Jazda dodatkowa:</div>

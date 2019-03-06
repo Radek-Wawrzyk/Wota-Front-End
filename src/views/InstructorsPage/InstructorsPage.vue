@@ -22,7 +22,9 @@
             <ul class="instructor-stats">
               <li class="instructor-stats-item">
                 <p>Kategorie</p>
-                <span v-for="(category, index) in instructor.categories" :key="index">{{category}},</span>
+                <!-- <span v-for="(category, index) in instructor.categories" :key="index">{{category}},</span> -->
+                <span v-if="instructor.categories.length === 1">{{instructor.categories[0]}}</span>
+                <span v-if="instructor.categories.length > 1">{{instructor.categories.join(',')}}</span>
               </li>
               <!-- <li class="instructor-stats-item">
                 <p>Średnia ocen:</p>

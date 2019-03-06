@@ -30,6 +30,9 @@ table {
       &:nth-child(even) {
         background-color: #f3f3f3;
       }
+      &:last-child {
+        border-bottom: 1px solid;
+      }
       &:hover {
         background-color: #dd290021; 
         cursor: pointer;
@@ -54,6 +57,14 @@ table {
       }
     }
   }
+}
+
+.com{
+  max-width: 20%;
+}
+
+.table-responsive {
+  margin-bottom: 100px;
 }
 
 //Media
