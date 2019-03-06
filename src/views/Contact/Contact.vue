@@ -1,24 +1,28 @@
 <template>
   <main>
-    <SubHeader title='Kontakt' />
+    <SubHeader title="Kontakt"/>
     <section class="contact-info">
       <ContactTile :info="tiles[0]"></ContactTile>
       <ContactTile :info="tiles[1]"></ContactTile>
+      <ContactTile :info="tiles[2]"></ContactTile>
     </section>
-    <ContactForm title='Napisz do nas' />
-    <Map :withRed='true' />
+    <section class="contact-info">
+      <ContactTile :info="tiles[3]"></ContactTile>
+    </section>
+    <ContactForm title="Napisz do nas"/>
+    <Map :withRed="true"/>
   </main>
 </template>
 
 <script>
-import ContactForm from '../../components/ContactForm/ContactForm.vue';
-import Map from '../../components/Map/Map.vue';
-import ContactTile from '../../components/ContactTile/ContactTile.vue';
+import ContactForm from "../../components/ContactForm/ContactForm.vue";
+import Map from "../../components/Map/Map.vue";
+import ContactTile from "../../components/ContactTile/ContactTile.vue";
 import axios from "axios";
-import { API } from '@/main.js';
+import { API } from "@/main.js";
 
 export default {
-  name: 'Contact',
+  name: "Contact",
   data: () => ({
     tiles: []
   }),
@@ -31,7 +35,7 @@ export default {
     try {
       const response = await axios.get(`${API}/contact`);
       this.tiles = response.data;
-    } catch(error) {
+    } catch (error) {
       console.log(error);
     }
   }

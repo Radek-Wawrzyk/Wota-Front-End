@@ -2,7 +2,7 @@
   <section class="reviews">
     <div class="container">
       <h2 class="reviews-title">Opinie</h2>
-      <h4 class="nexist">Brak opinii</h4>
+      <h4 class="nexist" v-if="this.testimonials.length === 0">Brak opinii</h4>
       <carousel
         class="reviews-slider"
         :per-page="1"

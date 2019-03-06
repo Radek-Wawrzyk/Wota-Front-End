@@ -24,14 +24,14 @@
                 <p>Kategorie</p>
                 <span v-for="(category, index) in instructor.categories" :key="index">{{category}},</span>
               </li>
-              <li class="instructor-stats-item">
+              <!-- <li class="instructor-stats-item">
                 <p>Średnia ocen:</p>
-                <span>4.5/5</span>
+                <span>Brak</span>
               </li>
               <li class="instructor-stats-item">
                 <p>Ilość opinii:</p>
-                <span>18</span>
-              </li>
+                <span>Brak</span>
+              </li> -->
             </ul>
             <router-link class="btn btn-primary" :to="`/instruktorzy/${instructor._id}`">Więcej</router-link>
           </li>
