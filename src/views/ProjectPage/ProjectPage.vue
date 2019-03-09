@@ -3,7 +3,7 @@
     <SubHeader :title="project.title" :backgroundImg="project.image"></SubHeader>
     <section class="project">
       <div class="container">
-        <h2 class="project-title">{{project.subtitle}}</h2>
+        <!-- <h2 class="project-title">{{project.subtitle}}</h2> -->
         <div class="project-content editor-content" v-html="project.content"></div>
       </div>
     </section>
