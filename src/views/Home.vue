@@ -7,7 +7,7 @@
     <Reviews/>
     <Instructors/>
     <Sale/>
-    <ContactForm title='Kontakt' />
+    <ContactForm title="Kontakt"/>
     <Map />
   </main>
 </template>
@@ -24,7 +24,7 @@ import ContactForm from "../components/ContactForm/ContactForm.vue";
 import Map from "../components/Map/Map.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Header,
     Sale,

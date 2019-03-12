@@ -30,18 +30,22 @@
   justify-content: space-between;
   font-size: 28px;
   font-weight: 600;
-  &:first-child{
-      padding-bottom: 20px;
+  &:first-child {
+    padding-bottom: 20px;
   }
 }
 
-.p-r{
-    padding-right: 20px;
-    border-right: 1px solid black;
+.course-page-content {
+  margin-bottom: 100px;
 }
 
-.p-l{
-    padding-left: 20px;
+.p-r {
+  padding-right: 20px;
+  border-right: 1px solid black;
+}
+
+.p-l {
+  padding-left: 20px;
 }
 
 //Media

@@ -13,10 +13,7 @@
         <ul class="instructors-list">
           <li class="instructor" v-for="instructor in instructors" :key="instructor._id">
             <figure class="instructor-img">
-              <img
-                :src="instructor.avatar"
-                :alt="instructor.fullname"
-              >
+              <img :src="instructor.avatar" :alt="instructor.fullname">
             </figure>
             <h2 class="instructor-title">{{instructor.fullname}}</h2>
             <ul class="instructor-stats">
@@ -33,7 +30,7 @@
               <li class="instructor-stats-item">
                 <p>Ilość opinii:</p>
                 <span>Brak</span>
-              </li> -->
+              </li>-->
             </ul>
             <router-link class="btn btn-primary" :to="`/instruktorzy/${instructor._id}`">Więcej</router-link>
           </li>
@@ -47,7 +44,7 @@
 <script>
 import Sale from "../../components/Sale/Sale.vue";
 import axios from "axios";
-import { API } from '@/main.js';
+import { API } from "@/main.js";
 
 export default {
   name: "instructorsPage",
@@ -61,7 +58,16 @@ export default {
     try {
       const response = await axios.get(`${API}/instructors`);
       response.data ? (this.instructors = response.data) : false;
-    } catch(error) {
+      this.instructors.sort(function(a, b) {
+        if (a.index < b.index) {
+          return -1;
+        }
+        if (a.index > b.index) {
+          return 1;
+        }
+        return 0;
+      });
+    } catch (error) {
       console.log(error);
     }
   }

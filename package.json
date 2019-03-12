@@ -1,5 +1,5 @@
 {
-  "name": "dupa",
+  "name": "wota",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,7 @@
     "vue": "^2.5.17",
     "vue-carousel": "^0.16.0",
     "vue-router": "^3.0.1",
-    "vue2-google-maps": "^0.10.5",
+    "vue2-google-maps": "^0.10.6",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

@@ -25,7 +25,10 @@
         <ul class="instructor-list">
           <li class="instructor-list-item">
             Kategorie:
-            <span v-for="(category, index) in instructor.categories" :key="index">{{category}},</span>
+            <span
+              v-for="(category, index) in instructor.categories"
+              :key="index"
+            >{{category}},</span>
           </li>
           <li class="instructor-list-item">
             Średnia ocen:
@@ -37,7 +40,11 @@
           </li>
         </ul>
         <footer class="instructor-more">
-          <router-link :to="`/instruktorzy/${instructor._id}`" :title="instructor.fullname" :aria-label="instructor.fullname">czytalej dalej ></router-link>
+          <router-link
+            :to="`/instruktorzy/${instructor._id}`"
+            :title="instructor.fullname"
+            :aria-label="instructor.fullname"
+          >czytaj dalej ></router-link>
         </footer>
       </slide>
     </carousel>
@@ -50,7 +57,7 @@
 
 <script>
 import axios from "axios";
-import { API } from '@/main.js';
+import { API } from "@/main.js";
 
 export default {
   name: "Instructors",
@@ -64,8 +71,17 @@ export default {
   async created() {
     try {
       const response = await axios.get(`${API}/instructors`);
-      response.data ? this.instructors = response.data : false;
-    } catch(error) {
+      response.data ? (this.instructors = response.data) : false;
+      this.instructors.sort(function(a, b) {
+        if (a.index < b.index) {
+          return -1;
+        }
+        if (a.index > b.index) {
+          return 1;
+        }
+        return 0;
+      });
+    } catch (error) {
       console.log(error);
     }
   }

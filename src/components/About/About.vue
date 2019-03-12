@@ -1,7 +1,7 @@
 <template>
   <section class="about">
     <header class="about-header">
-      <h2 class="about-header-title">Nasz szkoła</h2>
+      <h2 class="about-header-title">Nasza szkoła</h2>
       <p class="about-header-description">
         Auto Szkoła "WOTA" powstała w styczniu 1989 roku. Pomysłodawcą i założycielem był wtedy Zygmunt Wota -
         Instruktor nauki jazdy z wielotetnim stażem. Był to historyczny kork w nową rzeczywistość. Pierwszy prywatny ośrodek kształcenia kierwców w Łodzi zaczął

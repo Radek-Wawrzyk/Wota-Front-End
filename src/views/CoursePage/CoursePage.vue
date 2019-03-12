@@ -36,7 +36,8 @@
           </el-col>
         </el-row>
       </div>
-      <div>
+      <div v-if="JSON.parse(course.schedule)[0].values.length > 0 || JSON.parse(course.schedule)[1].values.length > 0 || JSON.parse(course.schedule)[2].values.length > 0">
+        <!-- {{JSON.parse(course.schedule)[2]}} -->
         <CoursesTable :schedule="JSON.parse(course.schedule)"/>
       </div>
     </div>
