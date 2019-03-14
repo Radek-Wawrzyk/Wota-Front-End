@@ -68,7 +68,7 @@
               </svg>
             </a>
           </li>
-          <li class="footer-socials-item">
+          <!-- <li class="footer-socials-item">
             <a href="#">
               <svg
                 aria-hidden="true"
@@ -85,7 +85,7 @@
                 ></path>
               </svg>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
       <!-- <p class="footer-copyright">

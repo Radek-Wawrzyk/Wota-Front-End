@@ -17,7 +17,7 @@
         :key="index"
       >
         <el-col :span="8" class="table-row">{{sch.dayFromTo[0]}} - {{sch.dayFromTo[1]}}</el-col>
-        <el-col :span="8" class="table-row">{{sch.theoryDays}}</el-col>
+        <el-col :span="8" class="table-row t-s">{{sch.theoryDays}}</el-col>
         <el-col :span="8" class="table-row">{{sch.hoursFromTo[0]}} - {{sch.hoursFromTo[1]}}</el-col>
       </el-row>
     </span>
@@ -33,7 +33,7 @@
         :key="index"
       >
         <el-col :span="8" class="table-row">{{sch.dayFromTo[0]}} - {{sch.dayFromTo[1]}}</el-col>
-        <el-col :span="8" class="table-row">{{sch.theoryDays}}</el-col>
+        <el-col :span="8" class="table-row t-s">{{sch.theoryDays}}</el-col>
         <el-col :span="8" class="table-row">{{sch.hoursFromTo[0]}} - {{sch.hoursFromTo[1]}}</el-col>
       </el-row>
     </span>
@@ -49,7 +49,7 @@
         :key="index"
       >
         <el-col :span="8" class="table-row">{{sch.dayFromTo[0]}} - {{sch.dayFromTo[1]}}</el-col>
-        <el-col :span="8" class="table-row">{{sch.theoryDays}}</el-col>
+        <el-col :span="8" class="table-row t-s">{{sch.theoryDays}}</el-col>
         <el-col :span="8" class="table-row">{{sch.hoursFromTo[0]}} - {{sch.hoursFromTo[1]}}</el-col>
       </el-row>
     </span>

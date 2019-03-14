@@ -5,14 +5,19 @@
         <img src="../../assets/img/logoC.png" alt="Wota">
       </router-link>
     </figure>
-    <button class="navigation-button" :class="{'active': menuStatus}" @click="toggleMenu" :aria-expanded="menuStatus ? 'true' : 'false'">
+    <button
+      class="navigation-button"
+      :class="{'active': menuStatus}"
+      @click="toggleMenu"
+      :aria-expanded="menuStatus ? 'true' : 'false'"
+    >
       <span class="navigation-button-bar"></span>
       <span class="navigation-button-bar"></span>
       <span class="navigation-button-bar"></span>
     </button>
     <ul class="navigation-menu" :class="{'active': menuStatus}">
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/" >Główna</router-link>
+        <router-link class="navigation-menu-item-link" to="/">Główna</router-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
         <router-link class="navigation-menu-item-link" to="/kursy">Kursy</router-link>
@@ -42,10 +47,10 @@ export default {
   methods: {
     toggleMenu() {
       if (window.innerWidth <= 1024) {
-        this.menuStatus =! this.menuStatus;
+        this.menuStatus = !this.menuStatus;
       }
     }
-  },
+  }
 };
 </script>
 
