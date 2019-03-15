@@ -29,12 +29,10 @@
       color: white;
       position: relative;
     }
-  }
-  &-link {
-    outline-color: $primary;
-    &:hover, &:focus {
-      .gallery-photo::before {
-        opacity: 0.4;
+    &:hover {
+      cursor: pointer;
+      &::before {
+        opacity: 0.6;
       }
     }
   }

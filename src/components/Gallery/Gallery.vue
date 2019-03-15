@@ -3,23 +3,18 @@
     <h2 class="section-title">{{title ? 'Galeria' : ''}}</h2>
     <el-row :gutter="20">
       <el-col :md="16">
-        <div class="gallery-photo" :style="galleryPlace[0].image  ? `background-image: url(${galleryPlace[0].image })` : ``"  @click="openLightbox(0, 'place')">
-          <div class="gallery-photo-title">Plac manewrowy</div>
-        </div>
+        <GalleryPhoto title="Plac manewrowy" :image="galleryPlace[0].image" type="place" @openLightbox="openLightbox(0, $event)"></GalleryPhoto>
       </el-col>
       <el-col :md="8">
-        <div class="gallery-photo" :style="galleryHall[0].image  ? `background-image: url(${galleryHall[0].image })` : ``"  @click="openLightbox(0, 'hall')">
-          <div class="gallery-photo-title">Sala szkoleniowa</div>
-        </div>
+        <GalleryPhoto title="Sala szkoleniowa" :image="galleryHall[0].image" type="hall" @openLightbox="openLightbox(0, $event)"></GalleryPhoto>
       </el-col>
     </el-row>
     <el-row :gutter="20">
       <el-col :md="6" v-for="(item, index) in gallery" :key="item._id" >
-        <div class="gallery-photo" :style="item.image  ? `background-image: url(${item.image })` : ``"  @click="openLightbox(index, 'all')">
-        </div>
+        <GalleryPhoto :image="item.image" type="all" @openLightbox="openLightbox(index, $event)"></GalleryPhoto>
       </el-col>
     </el-row>
-    <vue-gallery-slideshow :images="activeGallery === 'place' ? galleryPlaceImages : (activeGallery === 'hall' ? galleryHallImages : galleryImages)" :index="index" @close="index = null"></vue-gallery-slideshow>
+    <vue-gallery-slideshow :images="galleryType" :index="index" @close="index = null"></vue-gallery-slideshow>
   </div>
 </template>
 
@@ -75,25 +70,25 @@ export default {
 
       return images;
     },
-    activeGallery() {
-      switch (gallery) {
+    galleryType() {
+      switch (this.activeGallery) {
         case 'place': {
-          this.activeGallery = 'place';
+          return this.galleryPlaceImages;
           break;
         }
         case 'hall': {
-          this.activeGallery = 'hall';
+          return this.galleryHallImages;
           break;
         }
         case 'all': {
-          this.activeGallery = 'all';
+          return this.galleryImages;
           break;
         }
         default: {
           break;
         }
       }
-    },
+    }
   },
   methods: {
     openLightbox(index, galleryCategory) {
