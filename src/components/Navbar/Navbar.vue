@@ -17,22 +17,25 @@
     </button>
     <ul class="navigation-menu" :class="{'active': menuStatus}">
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/">Główna</router-link>
+        <router-link class="navigation-menu-item-link" to="/" title="Główna" aria-label="Główna">Główna</router-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/kursy">Kursy</router-link>
+        <router-link class="navigation-menu-item-link" to="/kursy" title="Kursy" aria-label="Kursy">Kursy</router-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/instruktorzy">Instruktorzy</router-link>
+        <router-link class="navigation-menu-item-link" to="/instruktorzy" title="Instruktorzy" aria-label="Instruktorzy">Instruktorzy</router-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/pojazdy">Pojazdy</router-link>
+        <router-link class="navigation-menu-item-link" to="/pojazdy" title="Pojazdy" aria-label="Pojazdy">Pojazdy</router-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/projekty">Projekty</router-link>
+        <router-link class="navigation-menu-item-link" to="/projekty" title="Projekty" aria-label="Projekty">Projekty</router-link>
+      </li>
+      <li class="navigation-menu-item" @click="toggleMenu">
+        <router-link class="navigation-menu-item-link" to="/galeria" title="Galeria" aria-label="Galeria">Galeria</router-link>
       </li>
       <li class="navigation-menu-item last" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link last btn btn-primary" to="/kontakt">kontakt</router-link>
+        <router-link class="navigation-menu-item-link last btn btn-primary" title="Kontakt" aria-label="Kontakt" to="/kontakt">kontakt</router-link>
       </li>
     </ul>
   </nav>

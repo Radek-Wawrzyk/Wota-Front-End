@@ -35,6 +35,7 @@
     cursor: pointer;
     transition: transform 0.3s ease;
     overflow: hidden;
+    outline-color: $primary;
     &:hover {
       cursor: pointer;
     }
@@ -102,6 +103,7 @@
         font-weight: 600;
         font-size: 14px;
         text-transform: uppercase;
+        outline-color: $primary;
         transition: color 0.25s;
         &.last {
           height: 35px;

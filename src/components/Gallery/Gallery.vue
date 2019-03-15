@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="section-title">Galeria</h2>
+    <h2 class="section-title">{{title ? 'Galeria' : ''}}</h2>
     <el-row :gutter="20">
       <el-col :md="16">
         <GalleryPhoto title="Plac manewrowy" v-if="galleryPlace[0]" :image="galleryPlace[0].image" />
@@ -27,6 +27,9 @@ export default {
   data: () => ({
     gallery: []
   }),
+  props: {
+    title: Boolean
+  },
   components: {
     GalleryPhoto
   },
@@ -41,8 +44,6 @@ export default {
   async created() {
     try {
       const response = await axios.get(`${API}/galery`);
-      console.log(response.data);
-      
       response.data ? (this.gallery = response.data) : false;
     } catch(error) {
       console.log(error);

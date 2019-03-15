@@ -55,6 +55,11 @@ export default new Router({
       props: true
     },
     {
+      path: '/galeria',
+      name: 'gallery',
+      component: () => import('./views/GalleryPage/GalleryPage.vue')
+    },
+    {
       path: '/kontakt',
       name: 'contact',
       component: () => import('./views/Contact/Contact.vue')
