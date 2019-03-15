@@ -1,19 +1,25 @@
 <template>
-  <div>
+  <div class="gallery">
     <h2 class="section-title">{{title ? 'Galeria' : ''}}</h2>
     <el-row :gutter="20">
       <el-col :md="16">
-        <GalleryPhoto title="Plac manewrowy" v-if="galleryPlace[0]" :image="galleryPlace[0].image" />
+        <div class="gallery-photo" :style="galleryPlace[0].image  ? `background-image: url(${galleryPlace[0].image })` : ``"  @click="openLightbox(0, 'place')">
+          <div class="gallery-photo-title">Plac manewrowy</div>
+        </div>
       </el-col>
       <el-col :md="8">
-        <GalleryPhoto title="Sala szkoleniowa" v-if="galleryHall[0]" :image="galleryHall[0].image"/>
+        <div class="gallery-photo" :style="galleryHall[0].image  ? `background-image: url(${galleryHall[0].image })` : ``"  @click="openLightbox(0, 'hall')">
+          <div class="gallery-photo-title">Sala szkoleniowa</div>
+        </div>
       </el-col>
     </el-row>
     <el-row :gutter="20">
-      <el-col :md="6" v-for="item in gallery" :key="item._id" >
-        <GalleryPhoto :image="item.image" />
+      <el-col :md="6" v-for="(item, index) in gallery" :key="item._id" >
+        <div class="gallery-photo" :style="item.image  ? `background-image: url(${item.image })` : ``"  @click="openLightbox(index, 'all')">
+        </div>
       </el-col>
     </el-row>
+    <vue-gallery-slideshow :images="activeGallery === 'place' ? galleryPlaceImages : (activeGallery === 'hall' ? galleryHallImages : galleryImages)" :index="index" @close="index = null"></vue-gallery-slideshow>
   </div>
 </template>
 
@@ -21,24 +27,78 @@
 import GalleryPhoto from "../../components/GalleryPhoto/GalleryPhoto";
 import axios from "axios";
 import { API } from '@/main.js';
+import VueGallerySlideshow from 'vue-gallery-slideshow';
 
 export default {
   name: "gallery",
   data: () => ({
-    gallery: []
+    gallery: [],
+    index: null,
+    galleryPlaceImages: [],
+    galleryHallImages: [],
+    galleryAll: [],
+    activeGallery: ''
   }),
   props: {
-    title: Boolean
+    title: {
+      type: Boolean,
+      default: true
+    }
   },
   components: {
-    GalleryPhoto
+    GalleryPhoto,
+    VueGallerySlideshow 
   },
   computed: {
     galleryPlace() {
-      return this.gallery.filter(item => item.category === 'plac');
+      let galleryPlace = this.gallery.filter(item => item.category === 'plac');
+      let images = [];
+      galleryPlace.forEach(item => images.push(item.image));
+      
+      this.galleryPlaceImages = images;
+      return galleryPlace;
     },
     galleryHall() {
-      return this.gallery.filter(item => item.category === 'sala');
+      let galleryHall = this.gallery.filter(item => item.category === 'sala');
+      let images = [];
+      galleryHall.forEach(item => images.push(item.image));
+
+      this.galleryHallImages = images;
+      return galleryHall;
+    },
+    galleryImages() {
+      let images = [];
+      
+      for (let i = 0; i < this.gallery.length; i++) {
+        images.push(this.gallery[i].image);
+      }
+
+      return images;
+    },
+    activeGallery() {
+      switch (gallery) {
+        case 'place': {
+          this.activeGallery = 'place';
+          break;
+        }
+        case 'hall': {
+          this.activeGallery = 'hall';
+          break;
+        }
+        case 'all': {
+          this.activeGallery = 'all';
+          break;
+        }
+        default: {
+          break;
+        }
+      }
+    },
+  },
+  methods: {
+    openLightbox(index, galleryCategory) {
+      this.index = index;
+      this.activeGallery = galleryCategory;
     }
   },
   async created() {
