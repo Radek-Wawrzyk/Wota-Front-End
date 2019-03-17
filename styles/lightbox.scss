@@ -1,0 +1,29 @@
+.vgs {
+  background-color: rgba(0,0,0,0.9) !important;
+}
+
+//Main container
+
+.vgs__container {
+  border-radius: 0 !important;
+  left: 50% !important;
+  top: 50% !important;
+  right: inherit !important;
+  transform: translate(-50%, -50%);
+  margin: 0 !important;
+  background-color: transparent !important;
+}
+
+//Botton gallery
+
+.vgs__gallery {
+  display: none !important;
+}
+
+//Media
+
+@media (max-width: 767px) {
+  .vgs__container {
+    padding: 0 20px;
+  }
+}

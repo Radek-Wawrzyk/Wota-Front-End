@@ -1,0 +1,21 @@
+.page-header {
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assets/img/baner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  h1 {
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+  }
+  h5 {
+    letter-spacing: 15px;
+    margin-bottom: 2rem;
+  }
+  .header-buttons a:first-child {
+    margin-right: 2rem;
+  }
+}
