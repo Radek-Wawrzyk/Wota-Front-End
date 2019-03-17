@@ -17,7 +17,6 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
   /*
   ** Customize the progress-bar color
   */
@@ -27,7 +26,8 @@ export default {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    './styles/main.scss'
   ],
 
   /*
@@ -41,9 +41,14 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/style-resources',
     '@nuxtjs/axios',
   ],
+  styleResources: {
+    scss: [
+      './styles/variables.scss' // use underscore "_" & also file extension ".scss"
+    ]
+  },
   /*
   ** Axios module configuration
   */
