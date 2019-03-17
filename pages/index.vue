@@ -1,18 +1,15 @@
 <template>
   <section class="container">
-   <a href="#">xDD</a>
+   <nuxt-link to="/test">test</nuxt-link>
   </section>
 </template>
 
 <script>
-
 export default {
 
 }
 </script>
 
 <style lang="scss">
-  a {
-   color: $primary;
-  }
+
 </style>
