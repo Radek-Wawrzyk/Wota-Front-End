@@ -63,7 +63,7 @@
             <el-col :md="24" class="form-row form-rodo">
               <el-radio
                 v-model="credentials.rodo"
-              >Rodo i regulamin Ullamco mollit sint quis esse amet.</el-radio>
+              >Akceptuję Regulamin.</el-radio>
             </el-col>
             <el-col :md="24" class="submit-btn">
               <button class="btn btn-outline-white" @click="submit" type="submit">Dodaj ocene</button>

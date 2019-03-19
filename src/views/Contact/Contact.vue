@@ -10,6 +10,7 @@
       <ContactTile :info="tiles[3]"></ContactTile>
     </section>
     <ContactForm title="Napisz do nas"/>
+    <Sale title="Dane bankowe" subtitle="Numer konta: <br>	61 1090 1014 0000 0712 1981 2874"/>
     <Map/>
   </main>
 </template>
@@ -19,6 +20,7 @@ import ContactForm from "../../components/ContactForm/ContactForm.vue";
 import Map from "../../components/Map/Map.vue";
 import ContactTile from "../../components/ContactTile/ContactTile.vue";
 import axios from "axios";
+import Sale from "../../components/Sale/Sale.vue";
 import { API } from "@/main.js";
 
 export default {
@@ -29,7 +31,8 @@ export default {
   components: {
     ContactForm,
     ContactTile,
-    Map
+    Map,
+    Sale
   },
   async created() {
     try {

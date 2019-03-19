@@ -1,7 +1,7 @@
 <template>
   <div class="course-table">
     <el-row class="course-table-header">
-      <el-col :span="8" class="table-row">Termin kursu {{this.adress1[0].values.length > 0}}</el-col>
+      <el-col :span="8" class="table-row">Termin kursu</el-col>
       <el-col :span="8" class="table-row">Dni zajęć teoretycznych</el-col>
       <el-col :span="8" class="table-row">Godziny zajęć teoretycznych</el-col>
     </el-row>
