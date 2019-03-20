@@ -61,9 +61,20 @@
             </el-col>
             <!-- {{this.credentials.rodo || 'Brak'}} -->
             <el-col :md="24" class="form-row form-rodo">
-              <el-radio
-                v-model="credentials.rodo"
-              >Akceptuję Regulamin.</el-radio>
+              <el-radio v-model="credentials.rodo">Akceptuję Regulamin.
+                <a
+                  href="https://hubertkuzdak.com/doc/RODO.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="color-white rate-form-a"
+                >RODO</a>
+              </el-radio>
+              <a
+                href="https://hubertkuzdak.com/doc/REGULAMIN_O%C5%9ARODKA.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="color-white rate-form-a"
+              >REGULAMIN</a>
             </el-col>
             <el-col :md="24" class="submit-btn">
               <button class="btn btn-outline-white" @click="submit" type="submit">Dodaj ocene</button>

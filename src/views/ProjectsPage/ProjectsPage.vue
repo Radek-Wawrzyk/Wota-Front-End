@@ -48,7 +48,18 @@ export default {
   },
   computed: {
     disabledProjects() {
-      return this.projects.filter(project => project.status === false);
+      const filtered = this.projects.filter(
+        project => project.status === false
+      );
+      return filtered.sort(function(a, b) {
+        if (a.index < b.index) {
+          return -1;
+        }
+        if (a.index > b.index) {
+          return 1;
+        }
+        return 0;
+      });
     },
     disabledProjectsLenght() {
       return this.disabledProjects.length;
@@ -57,7 +68,16 @@ export default {
       return this.enabledProjects.length;
     },
     enabledProjects() {
-      return this.projects.filter(project => project.status === true);
+      const filtered = this.projects.filter(project => project.status === true);
+      return filtered.sort(function(a, b) {
+        if (a.index < b.index) {
+          return -1;
+        }
+        if (a.index > b.index) {
+          return 1;
+        }
+        return 0;
+      });
     }
   },
   async created() {

@@ -7,6 +7,24 @@
         </figure>
         <ul class="footer-links">
           <li class="footer-links-item">
+            <a
+              href="https://hubertkuzdak.com/doc/RODO.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="color-white"
+            >RODO</a>
+          </li>
+          <li class="footer-links-item">
+            <a
+              href="https://hubertkuzdak.com/doc/REGULAMIN_O%C5%9ARODKA.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="color-white"
+            >REGULAMIN</a>
+          </li>
+        </ul>
+        <ul class="footer-links">
+          <li class="footer-links-item">
             <router-link to="/" aria-label="Główna" title="Główna">Główna</router-link>
           </li>
           <li class="footer-links-item">
@@ -50,7 +68,7 @@
               </svg>
             </a>
           </li>
-          <li class="footer-socials-item">
+          <!-- <li class="footer-socials-item">
             <a href="#">
               <svg
                 aria-hidden="true"
@@ -67,7 +85,7 @@
                 ></path>
               </svg>
             </a>
-          </li>
+          </li>-->
           <!-- <li class="footer-socials-item">
             <a href="#">
               <svg
@@ -85,7 +103,7 @@
                 ></path>
               </svg>
             </a>
-          </li> -->
+          </li>-->
         </ul>
       </div>
       <!-- <p class="footer-copyright">
@@ -100,7 +118,7 @@
           title="Hubert Front End developer"
           aria-label="Hubert Front End developer"
         >Hubert</a>
-      </p> -->
+      </p>-->
     </div>
   </footer>
 </template>

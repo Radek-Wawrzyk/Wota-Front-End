@@ -28,16 +28,16 @@
             <span
               v-for="(category, index) in instructor.categories"
               :key="index"
-            >{{category}},</span>
+            >{{category}}</span>
           </li>
-          <li class="instructor-list-item">
+          <!-- <li class="instructor-list-item">
             Średnia ocen:
             <span>4.9/5</span>
           </li>
           <li class="instructor-list-item">
             Opinii:
             <span>68</span>
-          </li>
+          </li> -->
         </ul>
         <footer class="instructor-more">
           <router-link

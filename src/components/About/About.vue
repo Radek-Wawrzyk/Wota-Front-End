@@ -60,14 +60,10 @@
                 alt="Ubezpieczenie"
               >
             </figure>
-            <h3 class="tile-title">Infrastruktura:</h3>
+            <h3 class="tile-title">Infrastruktura</h3>
             <p class="tile-description">
-              Prowadzimy szkolenie w zakresie wszystkich kategorii prawa jazdy . Dysponujemy własnym placem
-              manewrowym, zlokalizowanym w Łodzi , przy ul. Nowy Józefów 6 . Plac wyposażony jest w
-              kilkanaście stanowisk szkoleniowych , w tym stanowiska do nauki jazdy motocyklem -slalom szybki.
-              <br>Od siedziby nowego WORD-u dzieli nas bardzo niewielka odległość.
-              <br>Posiadamy nowoczesne , w pełni profesjonalnie wyposażone sale wykładowe , nasi wykładowcy
-              oprócz tradycyjnych form nauczania, prowadzą zajęcia przy użyciu nowatorskich metod.
+              Prowadzimy szkolenie w zakresie wszystkich kategorii prawa jazdy . Dysponujemy własnym placem manewrowym, zlokalizowanym w Łodzi , przy ul. Nowy Józefów 6 .
+              Posiadamy nowoczesne , w pełni profesjonalnie wyposażone sale wykładowe , nasi wykładowcy oprócz tradycyjnych form nauczania, prowadzą zajęcia przy użyciu nowatorskich metod
             </p>
           </div>
         </el-col>
