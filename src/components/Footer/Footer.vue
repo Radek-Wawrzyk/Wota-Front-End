@@ -50,7 +50,7 @@
       </div>
       <div class="footer-row socials">
         <ul class="footer-socials">
-          <li class="footer-socials-item">
+          <!-- <li class="footer-socials-item">
             <a href="#">
               <svg
                 aria-hidden="true"
@@ -67,7 +67,7 @@
                 ></path>
               </svg>
             </a>
-          </li>
+          </li> -->
           <!-- <li class="footer-socials-item">
             <a href="#">
               <svg

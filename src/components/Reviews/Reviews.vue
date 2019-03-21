@@ -81,7 +81,7 @@ export default {
       });
       response.data ? (this.testimonials = response.data) : false;
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
     }
   }
 };

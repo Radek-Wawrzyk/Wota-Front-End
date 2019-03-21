@@ -63,7 +63,6 @@ export default {
         }
         return 0;
       });
-      console.log(this.courses);
     } catch (error) {
       console.log(error);
     }

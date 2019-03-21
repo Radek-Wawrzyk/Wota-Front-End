@@ -11,8 +11,8 @@
               Kategorie:
               <span
                 class="vehicle-category-item"
-                v-for="(category, index) in vehicle.categories"
-                :key="index"
+                v-for="(category, title) in vehicle.categories"
+                :key="title"
               >{{category}},</span>
             </span>
             <img class="vehicle-img" :src="vehicle.image" :alt="vehicle.title">
@@ -25,12 +25,12 @@
 
 <script>
 import axios from "axios";
-import { API } from '@/main.js';
+import { API } from "@/main.js";
 
 export default {
   name: "Vehicles",
   props: {
-    noTitle: String,
+    noTitle: String
   },
   data: () => ({
     vehicles: []
@@ -38,7 +38,16 @@ export default {
   async created() {
     try {
       const response = await axios.get(`${API}/vehicles`);
-      response.data ? this.vehicles = response.data.slice(1) : false;
+      response.data ? (this.vehicles = response.data.slice(1)) : false;
+      this.vehicles.sort(function(a, b) {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
+        return 0;
+      });
     } catch {
       console.log(response.message);
     }

@@ -12,7 +12,7 @@
     <ContactForm title="Napisz do nas"/>
     <Sale
       title="Dane bankowe"
-      subtitle="Numer konta: <br><br>	Auto- Szkoła Wota sp. j <br><br> Bank Pekao S.A XI o/ Łódź <br> <br>08 1240 3073 1111 0000 3464 9389"
+      subtitle="Numer konta: <br><br>	Auto - Szkoła Wota sp. j <br><br> Bank Pekao S.A XI o/ Łódź <br> <br>08 1240 3073 1111 0000 3464 9389"
     />
     <Map/>
   </main>
