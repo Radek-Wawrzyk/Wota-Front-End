@@ -77,7 +77,7 @@
               >REGULAMIN</a>
             </el-col>
             <el-col :md="24" class="submit-btn">
-              <button class="btn btn-outline-white" @click="submit" type="submit">Dodaj ocene</button>
+              <button class="btn btn-outline-white" @click="submit" type="submit">Dodaj ocenę</button>
             </el-col>
           </el-row>
         </el-form>
