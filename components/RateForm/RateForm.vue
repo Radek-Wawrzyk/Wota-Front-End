@@ -126,7 +126,7 @@ export default {
           rodo: true
         });
 
-        const response = await axios.post(`${$API}/rate`, fullForm);
+        const response = await axios.post(`${this.$API}/rate`, fullForm);
 
         if (response.status === 200) {
           this.submited = true;

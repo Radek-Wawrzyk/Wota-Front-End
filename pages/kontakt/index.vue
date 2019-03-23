@@ -33,7 +33,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${$API}/contact`);
+      const response = await axios.get(`${this.$API}/contact`);
       this.tiles = response.data;
     } catch (error) {
       console.log(error);

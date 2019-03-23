@@ -70,7 +70,7 @@ export default {
   }),
   async created() {
     try {
-      const response = await axios.get(`${$API}/instructors`);
+      const response = await axios.get(`${this.$API}/instructors`);
       response.data ? (this.instructors = response.data) : false;
       this.instructors.sort(function(a, b) {
         if (a.index < b.index) {

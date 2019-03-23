@@ -24,7 +24,7 @@ export default {
   }),
   async created() {
     try {
-      const response = await axios.get(`${$API}/projects/${this.id}`);
+      const response = await axios.get(`${this.$API}/projects/${this.id}`);
       response.data ? this.project = response.data.project : false;
     } catch(error) {
       console.log(error.message);

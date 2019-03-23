@@ -70,7 +70,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${$API}/courses/${this.id}`);
+      const response = await axios.get(`${this.$API}/courses/${this.id}`);
       response.data ? (this.course = response.data.course) : false;
     } catch (error) {
       console.log(error.message);

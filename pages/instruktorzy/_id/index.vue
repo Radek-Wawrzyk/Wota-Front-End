@@ -34,8 +34,8 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${$API}/instructors/${this.id}`);
-      const { data } = await axios.get(`${$API}/rate/${this.id}`);
+      const response = await axios.get(`${this.$API}/instructors/${this.id}`);
+      const { data } = await axios.get(`${this.$API}/rate/${this.id}`);
       this.comments = data;
       response.data ? (this.instructor = response.data) : false;
     } catch (error) {

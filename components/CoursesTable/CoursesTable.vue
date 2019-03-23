@@ -52,7 +52,7 @@ export default {
   }),
   async created() {
     try {
-      const response = await axios.get(`${$API}/courses`);
+      const response = await axios.get(`${this.$API}/courses`);
       response.data ? (this.courses = response.data) : false;
       this.courses.sort(function(a, b) {
         if (a.title < b.title) {

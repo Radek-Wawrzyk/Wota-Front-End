@@ -22,7 +22,6 @@
 import Categories from "@/components/Categories/Categories.vue";
 import Gallery from "@/components/Gallery/Gallery";
 import axios from "axios";
-
 import Vehicles from "@/components/Vehicles/Vehicles.vue";
 
 export default {
@@ -37,7 +36,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${$API}/vehicles`);
+      const response = await axios.get(`${this.$API}/vehicles`);
       response.data ? (this.vehicles = response.data) : false;
     } catch (error) {
       console.log(error);
