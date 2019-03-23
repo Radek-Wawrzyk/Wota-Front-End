@@ -17,7 +17,6 @@ import RateForm from "@/components/RateForm/RateForm.vue";
 import InstructorProfile from "@/components/InstructorProfile/InstructorProfile.vue";
 import axios from "axios";
 
-
 export default {
   name: "instructorPage",
   data: () => ({
@@ -29,13 +28,10 @@ export default {
     RateForm,
     InstructorProfile
   },
-  props: {
-    id: String
-  },
   async created() {
     try {
-      const response = await axios.get(`${this.$API}/instructors/${this.id}`);
-      const { data } = await axios.get(`${this.$API}/rate/${this.id}`);
+      const response = await axios.get(`${this.$API}/instructors/${this.$route.params.id}`);
+      const { data } = await axios.get(`${this.$API}/rate/${this.$route.params.id}`);
       this.comments = data;
       response.data ? (this.instructor = response.data) : false;
     } catch (error) {

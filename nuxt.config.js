@@ -35,10 +35,10 @@ export default {
   */
   plugins: [
     '@/plugins/element-ui',
-    '@plugins/globalComponents',
-    // '@/plugins/vueMaps',
-    // '@/plugins/vueCarousel',
-    '@/plugins/VeeValidate'
+    '@/plugins/globalComponents',
+    '@/plugins/VeeValidate',
+    { src: '@/plugins/vueMaps', ssr: false },
+    { src: '@/plugins/vueCarousel', ssr: false }
   ],
 
   /*

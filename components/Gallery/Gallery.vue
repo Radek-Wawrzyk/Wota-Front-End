@@ -1,6 +1,7 @@
 <template>
   <div class="gallery">
-    <!-- <h2 class="section-title">{{title ? 'Galeria' : ''}}</h2>
+    <no-ssr>
+       <h2 class="section-title">{{title ? 'Galeria' : ''}}</h2>
     <el-row :gutter="20">
       <el-col :md="16">
         <GalleryPhoto title="Plac manewrowy" :image="galleryPlace[0].image" type="place" @openLightbox="openLightbox(0, $event)"></GalleryPhoto>
@@ -14,7 +15,8 @@
         <GalleryPhoto :image="item.image" type="all" @openLightbox="openLightbox(index, $event)"></GalleryPhoto>
       </el-col>
     </el-row>
-    <vue-gallery-slideshow :images="galleryType" :index="index" @close="index = null"></vue-gallery-slideshow> -->
+    <vue-gallery-slideshow :images="galleryType" :index="index" @close="index = null"></vue-gallery-slideshow>
+    </no-ssr>
   </div>
 </template>
 

@@ -60,9 +60,6 @@ export default {
   data: () => ({
     course: {}
   }),
-  props: {
-    id: String
-  },
   components: {
     Sale,
     Gallery,
@@ -70,7 +67,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${this.$API}/courses/${this.id}`);
+      const response = await axios.get(`${this.$API}/courses/${this.$route.params.id}`);
       response.data ? (this.course = response.data.course) : false;
     } catch (error) {
       console.log(error.message);

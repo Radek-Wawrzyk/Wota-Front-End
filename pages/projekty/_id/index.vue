@@ -16,15 +16,12 @@ import axios from "axios";
 
 export default {
   name: 'Project',
-  props: {
-    id: String
-  },
   data: () => ({
     project: {}
   }),
   async created() {
     try {
-      const response = await axios.get(`${this.$API}/projects/${this.id}`);
+      const response = await axios.get(`${this.$API}/projects/${this.$route.params.id}`);
       response.data ? this.project = response.data.project : false;
     } catch(error) {
       console.log(error.message);
