@@ -1,0 +1,72 @@
+.instructors {
+  &-info {
+    text-align: center;
+    color: $secondary;
+    margin: 0 0 150px 0;
+  }
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+//Instructor
+
+.instructor {
+  width: calc( 50% - 100px );
+  margin: 75px 50px;
+  padding: 0 50px 50px 50px;
+  border: 3px solid #acacac;
+  border-radius: 30px;
+  &-img {
+    z-index: 10;
+    margin: -75px 0 0 0;
+    width: 150px;
+    height: 150px;
+    border: 3px solid $primary;
+  }
+  &-title {
+    margin: 25px 0;
+    font-size: 32px;
+  }
+  &-stats {
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      margin: 0 0 15px 0;
+      p {
+        color: $secondary-lighter;
+      }
+      span {
+        color: $primary;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .btn {
+    margin: 15px 0 0 0;
+  }
+}
+
+
+//media
+
+@media screen and (max-width: 1000px) {
+  .instructor {
+    width: 100%;
+    margin: 75px 0;
+  }
+}
+
+@media screen and (max-width: 486px) {
+  .instructor {
+    padding: 15px;
+    margin: 50px 0;
+  }
+  .instructors-info {
+    margin: 0 0 100px 0;
+  }
+}

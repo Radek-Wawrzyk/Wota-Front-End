@@ -34,7 +34,11 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    // '@/plugins/API',
+    // '@/plugins/vueMaps',
+    // '@/plugins/vueCarousel',
+    '@/plugins/VeeValidate'
   ],
 
   /*
@@ -60,7 +64,9 @@ export default {
   ** Build configuration
   */
   build: {
-    transpile: [/^element-ui/],
+    transpile: [
+      /^element-ui/
+    ],
     
     /*
     ** You can extend webpack config here

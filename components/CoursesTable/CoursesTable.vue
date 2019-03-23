@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <router-link
+        <nuxt-link
           :to="`/kursy/${course._id}`"
           :title="course.title"
           :aria-label="course.title"
@@ -34,7 +34,7 @@
               <i class="el-icon-caret-right"></i>
             </th>
           </tr>
-        </router-link>
+        </nuxt-link>
       </tbody>
     </table>
     {{course}}
@@ -42,9 +42,9 @@
 </template>
 
 <script>
-import { API } from "@/main.js";
+//import { API } from "@/plugins/API.js";
 import axios from "axios";
-
+const API = '';
 export default {
   name: "coursesTable",
   data: () => ({

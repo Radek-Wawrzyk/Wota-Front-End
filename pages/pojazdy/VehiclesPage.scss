@@ -1,0 +1,23 @@
+.vehicles-info {
+  margin: 0 0 100px 0;
+  text-align: center;
+  color: $secondary;
+}
+
+//Vehicle
+
+.vehicle {
+  margin: 0 0 75px 0;
+  &-name {
+    font-size: 30px;
+    color: $secondary;
+  }
+  &-categories {
+    margin: 10px 0;
+    color: $secondary-lighter;
+  }
+  &-img {
+    width: 70%;
+    height: auto;
+  }
+}

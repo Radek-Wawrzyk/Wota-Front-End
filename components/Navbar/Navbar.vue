@@ -1,9 +1,9 @@
 <template>
   <nav class="navigation">
     <figure class="navigation-logo">
-      <router-link to="/">
+      <nuxt-link to="/">
         <img src="../../assets/img/logoC.png" alt="Wota">
-      </router-link>
+      </nuxt-link>
     </figure>
     <button
       class="navigation-button"
@@ -17,25 +17,25 @@
     </button>
     <ul class="navigation-menu" :class="{'active': menuStatus}">
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/" title="Główna" aria-label="Główna">Główna</router-link>
+        <nuxt-link class="navigation-menu-item-link" to="/" title="Główna" aria-label="Główna">Główna</nuxt-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/kursy" title="Kursy" aria-label="Kursy">Kursy</router-link>
+        <nuxt-link class="navigation-menu-item-link" to="/kursy" title="Kursy" aria-label="Kursy">Kursy</nuxt-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/instruktorzy" title="Instruktorzy" aria-label="Instruktorzy">Instruktorzy</router-link>
+        <nuxt-link class="navigation-menu-item-link" to="/instruktorzy" title="Instruktorzy" aria-label="Instruktorzy">Instruktorzy</nuxt-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/pojazdy" title="Pojazdy" aria-label="Pojazdy">Pojazdy</router-link>
+        <nuxt-link class="navigation-menu-item-link" to="/pojazdy" title="Pojazdy" aria-label="Pojazdy">Pojazdy</nuxt-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/projekty" title="Projekty" aria-label="Projekty">Projekty</router-link>
+        <nuxt-link class="navigation-menu-item-link" to="/projekty" title="Projekty" aria-label="Projekty">Projekty</nuxt-link>
       </li>
       <li class="navigation-menu-item" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link" to="/galeria" title="Galeria" aria-label="Galeria">Galeria</router-link>
+        <nuxt-link class="navigation-menu-item-link" to="/galeria" title="Galeria" aria-label="Galeria">Galeria</nuxt-link>
       </li>
       <li class="navigation-menu-item last" @click="toggleMenu">
-        <router-link class="navigation-menu-item-link last btn btn-primary" title="Kontakt" aria-label="Kontakt" to="/kontakt">kontakt</router-link>
+        <nuxt-link class="navigation-menu-item-link last btn btn-primary" title="Kontakt" aria-label="Kontakt" to="/kontakt">kontakt</nuxt-link>
       </li>
     </ul>
   </nav>

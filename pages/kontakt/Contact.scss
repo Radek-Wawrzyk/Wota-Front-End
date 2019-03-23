@@ -1,0 +1,18 @@
+.contact {
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+//Media
+
+@media screen and (max-width: 920px) {
+  .contact-info {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}

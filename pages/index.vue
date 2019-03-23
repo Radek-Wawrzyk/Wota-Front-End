@@ -1,15 +1,69 @@
 <template>
-  <section class="container">
-   <nuxt-link to="/test">test</nuxt-link>
-  </section>
+  <main class="home">
+    <Header/>
+    <About/>
+    <Categories/>
+    <Vehicles/>
+    <Reviews/>
+    <Instructors/>
+    <Sale/>
+    <ContactForm title="Kontakt"/>
+    <Map/>
+    <div class="fb-icon">
+      <a href="https://www.facebook.com/Auto-Szkola-WOTA-127784787273828/" target="_blank">
+        <svg
+          aria-hidden="true"
+          data-prefix="fab"
+          data-icon="facebook"
+          class="svg-inline--fa fa-facebook fa-w-14"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
+          ></path>
+        </svg>
+      </a>
+    </div>
+  </main>
 </template>
 
 <script>
-export default {
+import Header from "../components/Header/Header";
+import Sale from "../components/Sale/Sale.vue";
+import Categories from "../components/Categories/Categories.vue";
+import About from "../components/About/About.vue";
+import Vehicles from "../components/Vehicles/Vehicles.vue";
+import Reviews from "../components/Reviews/Reviews.vue";
+import Instructors from "../components/Instructors/Instructors.vue";
+import ContactForm from "../components/ContactForm/ContactForm.vue";
+import Map from "../components/Map/Map.vue";
 
-}
+export default {
+  name: "Home",
+  components: {
+    Header,
+    Sale,
+    Categories,
+    About,
+    Vehicles,
+    Reviews,
+    Instructors,
+    ContactForm,
+    Map
+  }
+};
 </script>
 
-<style lang="scss">
-
+<style scoped>
+.fb-icon{
+  position: fixed;
+  right: 0;
+  top: 30%;
+  z-index: 999;
+  width: 30px;
+  color: #3B5998;
+}
 </style>

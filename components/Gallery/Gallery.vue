@@ -21,7 +21,6 @@
 <script>
 import GalleryPhoto from "../../components/GalleryPhoto/GalleryPhoto";
 import axios from "axios";
-import { API } from '@/main.js';
 import VueGallerySlideshow from 'vue-gallery-slideshow';
 
 export default {
