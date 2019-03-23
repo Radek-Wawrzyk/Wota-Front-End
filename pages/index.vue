@@ -1,6 +1,6 @@
 <template>
   <main class="home">
-    <Header/>
+    <!-- <Header/>
     <About/>
     <Categories/>
     <Vehicles/>
@@ -8,7 +8,7 @@
     <Instructors/>
     <Sale/>
     <ContactForm title="Kontakt"/>
-    <Map/>
+    <Map/> -->
     <div class="fb-icon">
       <a href="https://www.facebook.com/Auto-Szkola-WOTA-127784787273828/" target="_blank">
         <svg
@@ -53,6 +53,9 @@ export default {
     Instructors,
     ContactForm,
     Map
+  },
+  created() {
+    console.log(this.$API);
   }
 };
 </script>

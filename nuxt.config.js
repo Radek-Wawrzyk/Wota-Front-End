@@ -35,7 +35,7 @@ export default {
   */
   plugins: [
     '@/plugins/element-ui',
-    // '@/plugins/API',
+    '@plugins/globalComponents',
     // '@/plugins/vueMaps',
     // '@/plugins/vueCarousel',
     '@/plugins/VeeValidate'

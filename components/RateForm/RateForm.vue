@@ -77,7 +77,7 @@
 
 <script>
 import axios from "axios";
-import { API } from "@/main.js";
+
 export default {
   name: "rateform",
   props: {
@@ -126,7 +126,7 @@ export default {
           rodo: true
         });
 
-        const response = await axios.post(`${API}/rate`, fullForm);
+        const response = await axios.post(`${$API}/rate`, fullForm);
 
         if (response.status === 200) {
           this.submited = true;

@@ -2,7 +2,7 @@
   <nav class="navigation">
     <figure class="navigation-logo">
       <nuxt-link to="/">
-        <img src="../../assets/img/logoC.png" alt="Wota">
+        <img src="@/assets/img/logoC.png" alt="Wota">
       </nuxt-link>
     </figure>
     <button

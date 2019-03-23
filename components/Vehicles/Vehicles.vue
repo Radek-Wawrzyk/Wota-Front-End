@@ -25,7 +25,7 @@
 
 <script>
 import axios from "axios";
-import { API } from '@/main.js';
+
 
 export default {
   name: "Vehicles",
@@ -37,7 +37,7 @@ export default {
   }),
   async created() {
     try {
-      const response = await axios.get(`${API}/vehicles`);
+      const response = await axios.get(`${$API}/vehicles`);
       response.data ? this.vehicles = response.data.slice(1) : false;
     } catch {
       console.log(response.message);

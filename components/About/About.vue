@@ -14,7 +14,7 @@
             <figure class="tile-icon">
               <img
                 class="vehicle-img"
-                :src="require('../../assets/img/zdawalnosc.png')"
+                :src="require('@/assets/img/zdawalnosc.png')"
                 alt="Wysoka zdawalnosc"
               >
             </figure>
@@ -29,7 +29,7 @@
             <figure class="tile-icon">
               <img
                 class="vehicle-img"
-                :src="require('../../assets/img/wybor.png')"
+                :src="require('@/assets/img/wybor.png')"
                 alt="Duża ilość kategorii"
               >
             </figure>
@@ -44,7 +44,7 @@
             <figure class="tile-icon">
               <img
                 class="vehicle-img"
-                :src="require('../../assets/img/ubezpieczenie.png')"
+                :src="require('@/assets/img/ubezpieczenie.png')"
                 alt="Ubezpieczenie"
               >
             </figure>

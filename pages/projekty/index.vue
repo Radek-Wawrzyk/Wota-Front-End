@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import Categories from "../../components/Categories/Categories";
-import Project from "../../components/Project/Project";
+import Categories from "@/components/Categories/Categories";
+import Project from "@/components/Project/Project";
 import axios from "axios";
-import { API } from '@/main.js';
+
 
 export default {
   name: "projectsPage",
@@ -59,7 +59,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${API}/projects`);
+      const response = await axios.get(`${$API}/projects`);
       response.data ? (this.projects = response.data) : false;
     } catch(error) {
       console.log(error);

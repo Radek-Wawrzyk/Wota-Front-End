@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import ContactForm from "../../components/ContactForm/ContactForm.vue";
-import Map from "../../components/Map/Map.vue";
-import ContactTile from "../../components/ContactTile/ContactTile.vue";
+import ContactForm from "@/components/ContactForm/ContactForm.vue";
+import Map from "@/components/Map/Map.vue";
+import ContactTile from "@/components/ContactTile/ContactTile.vue";
 import axios from "axios";
-import { API } from "@/main.js";
+
 
 export default {
   name: "Contact",
@@ -33,7 +33,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${API}/contact`);
+      const response = await axios.get(`${$API}/contact`);
       this.tiles = response.data;
     } catch (error) {
       console.log(error);

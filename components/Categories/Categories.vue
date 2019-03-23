@@ -6,7 +6,7 @@
         <li class="categories-list-item">
           <img
             class="vehicle-img"
-            :src="require('../../assets/img/kategorie/A1.png')"
+            :src="require('@/assets/img/kategorie/A1.png')"
             alt="kategoria A1"
           >
           <span class="categories-list-item-text">a1</span>
@@ -14,7 +14,7 @@
         <li class="categories-list-item">
           <img
             class="vehicle-img"
-            :src="require('../../assets/img/kategorie/A.png')"
+            :src="require('@/assets/img/kategorie/A.png')"
             alt="kategoria A"
           >
           <span class="categories-list-item-text">a</span>
@@ -22,7 +22,7 @@
         <li class="categories-list-item">
           <img
             class="vehicle-img"
-            :src="require('../../assets/img/kategorie/B1.png')"
+            :src="require('@/assets/img/kategorie/B1.png')"
             alt="kategoria B1"
           >
           <span class="categories-list-item-text">b1</span>
@@ -30,7 +30,7 @@
         <li class="categories-list-item">
           <img
             class="vehicle-img"
-            :src="require('../../assets/img/kategorie/B.png')"
+            :src="require('@/assets/img/kategorie/B.png')"
             alt="kategoria B"
           >
           <span class="categories-list-item-text">b</span>
@@ -38,7 +38,7 @@
         <li class="categories-list-item">
           <img
             class="vehicle-img"
-            :src="require('../../assets/img/kategorie/BE.png')"
+            :src="require('@/assets/img/kategorie/BE.png')"
             alt="kategoria BE"
           >
           <span class="categories-list-item-text">be</span>
@@ -46,7 +46,7 @@
         <li class="categories-list-item">
           <img
             class="vehicle-img"
-            :src="require('../../assets/img/kategorie/C.png')"
+            :src="require('@/assets/img/kategorie/C.png')"
             alt="kategoria C"
           >
           <span class="categories-list-item-text">c</span>
@@ -54,7 +54,7 @@
         <li class="categories-list-item">
           <img
             class="vehicle-img"
-            :src="require('../../assets/img/kategorie/D.png')"
+            :src="require('@/assets/img/kategorie/D.png')"
             alt="kategoria D"
           >
           <span class="categories-list-item-text">D</span>
@@ -62,7 +62,7 @@
         <li class="categories-list-item">
           <img
             class="vehicle-img"
-            :src="require('../../assets/img/kategorie/T.png')"
+            :src="require('@/assets/img/kategorie/T.png')"
             alt="kategoria T"
           >
           <span class="categories-list-item-text">t</span>
@@ -70,7 +70,7 @@
         <li class="categories-list-item">
           <img
             class="vehicle-img"
-            :src="require('../../assets/img/kategorie/TAXI.png')"
+            :src="require('@/assets/img/kategorie/TAXI.png')"
             alt="kategoria Taxi"
           >
           <span class="categories-list-item-text">taxi</span>

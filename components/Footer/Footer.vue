@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-row">
         <figure class="footer-logo">
-          <img src="../../assets/img/logo-white.png" alt="Wota">
+          <img src="@/assets/img/logo-white.png" alt="Wota">
         </figure>
         <ul class="footer-links">
           <li class="footer-links-item">

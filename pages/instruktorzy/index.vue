@@ -42,9 +42,9 @@
 </template>
 
 <script>
-import Sale from "../../components/Sale/Sale.vue";
+import Sale from "@/components/Sale/Sale.vue";
 import axios from "axios";
-import { API } from "@/main.js";
+
 
 export default {
   name: "instructorsPage",
@@ -56,7 +56,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${API}/instructors`);
+      const response = await axios.get(`${$API}/instructors`);
       response.data ? (this.instructors = response.data) : false;
       this.instructors.sort(function(a, b) {
         if (a.index < b.index) {

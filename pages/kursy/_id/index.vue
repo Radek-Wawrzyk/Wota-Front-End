@@ -49,11 +49,11 @@
 </template>
 
 <script>
-import Sale from "../../components/Sale/Sale.vue";
-import CoursesTable from "../../components/CourseTable/CourseTable";
-import Gallery from "../../components/Gallery/Gallery";
+import Sale from "@/components/Sale/Sale.vue";
+import CoursesTable from "@/components/CourseTable/CourseTable";
+import Gallery from "@/components/Gallery/Gallery";
 import axios from "axios";
-import { API } from "@/main.js";
+
 
 export default {
   name: "coursePage",
@@ -70,7 +70,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${API}/courses/${this.id}`);
+      const response = await axios.get(`${$API}/courses/${this.id}`);
       response.data ? (this.course = response.data.course) : false;
     } catch (error) {
       console.log(error.message);

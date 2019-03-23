@@ -31,7 +31,7 @@
 
 <script>
 import axios from "axios";
-import { API } from "@/main.js";
+
 
 export default {
   name: "Reviews",
@@ -66,8 +66,8 @@ export default {
   }),
   async created() {
     try {
-      const response = await axios.get(`${API}/rate`);
-      const instructorsData = await axios.get(`${API}/instructors`);
+      const response = await axios.get(`${$API}/rate`);
+      const instructorsData = await axios.get(`${$API}/instructors`);
       const comments = response.data;
       const instructors = instructorsData.data;
       comments.forEach(comment => {

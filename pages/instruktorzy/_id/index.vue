@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import Comments from "../../components/Comments/Comments.vue";
-import RateForm from "../../components/RateForm/RateForm.vue";
-import InstructorProfile from "../../components/InstructorProfile/InstructorProfile.vue";
+import Comments from "@/components/Comments/Comments.vue";
+import RateForm from "@/components/RateForm/RateForm.vue";
+import InstructorProfile from "@/components/InstructorProfile/InstructorProfile.vue";
 import axios from "axios";
-import { API } from "@/main.js";
+
 
 export default {
   name: "instructorPage",
@@ -34,8 +34,8 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${API}/instructors/${this.id}`);
-      const { data } = await axios.get(`${API}/rate/${this.id}`);
+      const response = await axios.get(`${$API}/instructors/${this.id}`);
+      const { data } = await axios.get(`${$API}/rate/${this.id}`);
       this.comments = data;
       response.data ? (this.instructor = response.data) : false;
     } catch (error) {

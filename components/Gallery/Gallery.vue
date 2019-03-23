@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import GalleryPhoto from "../../components/GalleryPhoto/GalleryPhoto";
+import GalleryPhoto from "@/components/GalleryPhoto/GalleryPhoto";
 import axios from "axios";
 import VueGallerySlideshow from 'vue-gallery-slideshow';
 
@@ -97,7 +97,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${API}/galery`);
+      const response = await axios.get(`${$API}/galery`);
       response.data ? (this.gallery = response.data) : false;
     } catch(error) {
       console.log(error);
