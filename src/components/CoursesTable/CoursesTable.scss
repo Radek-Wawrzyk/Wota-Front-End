@@ -30,14 +30,11 @@ table {
       &:nth-child(even) {
         background-color: #f3f3f3;
       }
-      &:last-child {
-        border-bottom: 1px solid;
-      }
       &:hover {
-        background-color: #dd290021; 
+        background-color: #dd290021;
         cursor: pointer;
       }
-      th {
+      td {
         padding: 15px;
         &:first-child {
           text-align: center;
@@ -59,7 +56,7 @@ table {
   }
 }
 
-.com{
+.com {
   max-width: 20%;
 }
 
@@ -67,10 +64,55 @@ table {
   margin-bottom: 100px;
 }
 
-//Media
-
 @media screen and (max-width: 992px) {
-  .table-responsive {
-    overflow-X: auto;
+  .course-icon,
+  .table-cell-button {
+    display: none;
+  }
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+    &:last-child {
+      border-bottom: 1px solid $primary;
+    }
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 20px;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
   }
 }

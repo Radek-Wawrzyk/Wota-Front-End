@@ -22,14 +22,14 @@
           :key="course._id"
         >
           <tr>
-            <th>
+            <td class="course-icon">
               <img :src="course.icon" :alt="course.title">
-            </th>
-            <th>{{course.title}}</th>
-            <th>{{course.practise}}</th>
-            <th>{{course.theory}}</th>
-            <th>{{course.comments}}</th>
-            <th>{{course.price}}</th>
+            </td>
+            <td data-label="Kategoria">{{course.title}}</td>
+            <td data-label="Praktyka">{{course.practise}}</td>
+            <td data-label="Teoria">{{course.theory}}</td>
+            <td data-label="Uwagi">{{course.comments}}</td>
+            <td data-label="Cena kursu">{{course.price}}</td>
             <th class="table-cell-button">
               <i class="el-icon-caret-right"></i>
             </th>
