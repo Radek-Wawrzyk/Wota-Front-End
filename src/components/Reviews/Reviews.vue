@@ -79,7 +79,8 @@ export default {
           comment.instructor = filtered[0].fullname;
         }
       });
-      response.data ? (this.testimonials = response.data) : false;
+      const filtered = response.data.filter(testi => testi.isAccepted);
+      response.data ? (this.testimonials = filtered) : false;
     } catch (error) {
       console.log(error);
     }
