@@ -1,26 +1,19 @@
 <template>
   <section class="contact-form">
     <h2 class="contact-form-title">{{title}}</h2>
+    <h4 class="error-message">{{this.errorMessage}}</h4>
+    <h4 class="success-message">{{this.successMessage}}</h4>
     <div class="container">
-      <el-form >
+      <el-form>
         <el-row :gutter="30">
           <el-col :md="12">
-            <el-input v-model="credentials.name" placeholder="Imię" name="name" v-validate="'required'"></el-input>
-            <transition name="fade-down">
-               <span class="el-form-item__error" v-if="errors.has('name')">{{errors.first('name')}}</span>
-            </transition>
+            <el-input v-model="credentials.name" placeholder="Imię" name="name"></el-input>
           </el-col>
           <el-col :md="12">
-            <el-input v-model="credentials.surname" placeholder="Nazwisko" v-validate="'required'" name="surname"></el-input>
-            <transition name="fade-down">
-               <span class="el-form-item__error" v-if="errors.has('surname')">{{errors.first('surname')}}</span>
-            </transition>
+            <el-input v-model="credentials.surrname" placeholder="Nazwisko" name="surrname"></el-input>
           </el-col>
           <el-col :md="12">
-            <el-input v-model="credentials.email" placeholder="Adres email" name="email" v-validate="'required|email'"></el-input>
-            <transition name="fade-down">
-               <span class="el-form-item__error" v-if="errors.has('email')">{{errors.first('email')}}</span>
-            </transition>
+            <el-input v-model="credentials.email" placeholder="Adres email" name="email"></el-input>
           </el-col>
           <el-col :md="12">
             <el-select v-model="credentials.course" placeholder="Rodzaj kursu">
@@ -28,14 +21,10 @@
                 v-for="item in options"
                 :key="item.value"
                 :label="item.label"
-                v-validate="'required'"
                 name="select"
-                :value="item.value">
-              </el-option>
+                :value="item.value"
+              ></el-option>
             </el-select>
-              <transition name="fade-down">
-               <span class="el-form-item__error" v-if="errors.has('select')">{{errors.first('select')}}</span>
-            </transition>
           </el-col>
           <el-col :md="24">
             <el-input
@@ -43,15 +32,11 @@
               :rows="8"
               placeholder="Treść wiadomości..."
               name="message"
-              v-validate="'required'"
-              v-model="credentials.message">
-            </el-input>
-            <transition name="fade-down">
-               <span class="el-form-item__error" v-if="errors.has('message')">{{errors.first('message')}}</span>
-            </transition>
+              v-model="credentials.message"
+            ></el-input>
           </el-col>
           <el-col :md="24" class="center">
-            <button class="btn btn-outline" @click="submitForm()" type="button" >Wyślij</button>
+            <button class="btn btn-outline" @click="submitForm()" type="button">Wyślij</button>
           </el-col>
         </el-row>
       </el-form>
@@ -61,26 +46,24 @@
 
 <script>
 import axios from "axios";
-import { API } from '@/main.js';
+import { API } from "@/main.js";
 
 export default {
-  name: 'ContactForm',
+  name: "ContactForm",
   data: () => ({
+    errorMessage: "",
+    successMessage: "",
     credentials: {
-      name: '',
-      surname: '',
-      email: '',
-      course: '',
-      message: ''
+      name: "",
+      surrname: "",
+      email: "",
+      course: "",
+      message: ""
     },
     options: [
       {
-        value: 'A',
-        label: 'A'
-      },
-      {
-        value: 'B1',
-        label: 'B1'
+        value: "Brak",
+        label: "Brak"
       }
     ]
   }),
@@ -89,15 +72,41 @@ export default {
   },
   methods: {
     async submitForm() {
-      const valid = await this.$validator.validateAll();
+      const valid =
+        !!this.credentials.name &&
+        !!this.credentials.surrname &&
+        !!this.credentials.email &&
+        !!this.credentials.message;
 
       if (valid) {
-        //VALID REQUEST 
+        this.errorMessage = "";
+        this.successMessage = "Dziękujemy za kontakt!";
+        const response = await axios.post(`${API}/contact`, this.credentials);
+
+        if (response.status === 200) {
+          this.credentials.name = "";
+          this.credentials.surrname = "";
+          this.credentials.email = "";
+          this.credentials.course = "";
+          this.credentials.message = "";
+        }
+      } else {
+        this.errorMessage = "Nie wszystkie pola zostały poprawnie uzupełnione";
       }
+    }
+  },
+  async created() {
+    try {
+      const response = await axios.get(`${API}/courses`);
+      const categories = response.data;
+      categories.forEach(category => {
+        this.options.push({ value: category.title, label: category.title });
+      });
+    } catch (error) {
+      console.log(error);
     }
   }
 };
-
 </script>
 
 <style lang="scss" scoped src="./ContactForm.scss" />
