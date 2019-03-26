@@ -1,4 +1,5 @@
 import pkg from './package'
+import axios from 'axios';
 
 export default {
   mode: 'universal',
@@ -68,6 +69,38 @@ export default {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
+  generate: {
+    routes: function() {
+      return axios.get(`https://hubertkuzdak.com/projects`).then(res => {
+        return res.data.map(project => {
+          return '/projekty/' + project._id;
+        })
+      })
+    }
+  },
+  generate: {
+    routes: function() {
+      let projects = axios.get(`https://hubertkuzdak.com/projects`).then(res => {
+        return res.data.map(project => {
+          return '/projekty/' + project._id;
+        })
+      });
+      let instructors = axios.get(`https://hubertkuzdak.com/instructors`).then(res => {
+        return res.data.map(instructor => {
+          return '/instruktorzy/' + instructor._id;
+        })
+      });
+      let courses = axios.get(`https://hubertkuzdak.com/courses`).then(res => {
+        return res.data.map(course => {
+          return '/kursy/' + course._id;
+        })
+      });
+
+      return Promise.all([projects, instructors, courses]).then(values => {
+        return values.join().split(',');
+      })
+    }
+  },
   /*
   ** Build configuration
   */
