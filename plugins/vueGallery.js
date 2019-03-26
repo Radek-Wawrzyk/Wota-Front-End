@@ -1,4 +1,4 @@
 import Vue from 'vue';
-import VueGallerySlideshow from 'vue-gallery-slideshow';
+import vueGallerySlideShow  from 'vue-gallery-slideshow';
 
-Vue.use(VueGallerySlideshow);
+Vue.component('vue-gallery-slideshow', vueGallerySlideShow);

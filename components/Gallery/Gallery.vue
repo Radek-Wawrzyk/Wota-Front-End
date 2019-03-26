@@ -22,10 +22,6 @@
 import GalleryPhoto from "@/components/GalleryPhoto/GalleryPhoto";
 import axios from "axios";
 
-if (process.client) {
-  require('vue-gallery-slideshow')
-}
-
 export default {
   name: "gallery",
   data: () => ({
