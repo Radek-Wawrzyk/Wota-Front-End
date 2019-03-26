@@ -56,6 +56,11 @@ export default {
       './styles/variables.scss' // use underscore "_" & also file extension ".scss"
     ]
   },
+  router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
+  },
   /*
   ** Axios module configuration
   */
