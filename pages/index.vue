@@ -4,7 +4,6 @@
     <About/>
     <Categories/>
     <Vehicles :vehicles="vehicles" />
-    {{vehicles}}
     <Reviews/>
     <Instructors/>
     <Sale/>
@@ -41,6 +40,7 @@ import Reviews from "@/components/Reviews/Reviews.vue";
 import Instructors from "@/components/Instructors/Instructors.vue";
 import ContactForm from "@/components/ContactForm/ContactForm.vue";
 import Map from "@/components/Map/Map.vue";
+import axios from 'axios'
 
 export default {
   name: "Home",
@@ -56,12 +56,8 @@ export default {
     Map
   },
   asyncData: async () => {
-    try {
-      const response = await axios.get(`${process.env.API}/vehicles`);
-      return { vehicles: response.data };
-    } catch (err) {
-      return { vehicles: [] };
-    }
+    const response = await axios.get(`${process.env.API}/vehicles`);
+    return { vehicles: response.data };
   }
 };
 </script>

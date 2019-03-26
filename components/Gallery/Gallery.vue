@@ -21,7 +21,10 @@
 <script>
 import GalleryPhoto from "@/components/GalleryPhoto/GalleryPhoto";
 import axios from "axios";
-import VueGallerySlideshow from 'vue-gallery-slideshow';
+
+if (process.client) {
+  require('vue-gallery-slideshow')
+}
 
 export default {
   name: "gallery",
@@ -40,8 +43,7 @@ export default {
     gallery: Array
   },
   components: {
-    GalleryPhoto,
-    VueGallerySlideshow,
+    GalleryPhoto
   },
   computed: {
     galleryPlace() {

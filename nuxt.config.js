@@ -68,16 +68,6 @@ export default {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
-  generate: {
-    routes: function() {
-      return axios.get(`https://hubertkuzdak.com/projects`).then(res => {
-        return res.data.map(project => {
-          return '/projekty/' + project._id;
-        })
-      })
-    }
-  },
   generate: {
     routes: function() {
       let projects = axios.get(`https://hubertkuzdak.com/projects`).then(res => {
