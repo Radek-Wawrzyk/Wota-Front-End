@@ -36,14 +36,14 @@
           </el-col>
         </el-row>
       </div>
-      <div v-if="JSON.parse(course.schedule)[0].values.length > 0 || JSON.parse(course.schedule)[1].values.length > 0 || JSON.parse(course.schedule)[2].values.length > 0">
+      <div v-if="JSON.parse(course.schedule)[0].values.length > 0 || JSON.parse(course.schedule)[1].values.length > 0 || JSON.parse(course.schedule)[2].values.length > 0"> -->
         <!-- {{JSON.parse(course.schedule)[2]}} -->
         <CoursesTable :schedule="JSON.parse(course.schedule)"/>
       </div>
     </div>
     <Sale/>
     <div class="container section-spacing">
-      <Gallery/>
+      <Gallery :gallery="gallery" />
     </div>
   </main>
 </template>
@@ -54,24 +54,21 @@ import CoursesTable from "@/components/CourseTable/CourseTable";
 import Gallery from "@/components/Gallery/Gallery";
 import axios from "axios";
 
-
 export default {
   name: "coursePage",
-  data: () => ({
-    course: {}
-  }),
   components: {
     Sale,
     Gallery,
     CoursesTable
   },
-  async created() {
-    try {
-      const response = await axios.get(`${this.$API}/courses/${this.$route.params.id}`);
-      response.data ? (this.course = response.data.course) : false;
-    } catch (error) {
-      console.log(error.message);
-    }
+  asyncData: async ({ params }) => {
+    const response = await axios.get(`${process.env.API}/courses/${params.id}`);
+    const data = await axios.get(`${process.env.API}/galery`);
+    
+    return { 
+      course: response.data,
+      gallery: data.data 
+    };
   }
 };
 </script>

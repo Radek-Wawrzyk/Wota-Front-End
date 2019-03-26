@@ -45,32 +45,20 @@
 import Sale from "@/components/Sale/Sale.vue";
 import axios from "axios";
 
-
 export default {
   name: "instructorsPage",
-  data: () => ({
-    instructors: []
-  }),
   components: {
     Sale
   },
-  async created() {
+  asyncData: async () => {
     try {
-      const response = await axios.get(`${this.$API}/instructors`);
-      response.data ? (this.instructors = response.data) : false;
-      this.instructors.sort(function(a, b) {
-        if (a.index < b.index) {
-          return -1;
-        }
-        if (a.index > b.index) {
-          return 1;
-        }
-        return 0;
-      });
-    } catch (error) {
-      console.log(error);
+      const response = await axios.get(`${process.env.API}/instructors`);
+      response.data.sort((a, b) => a.index < b.index ? -1 : a.index > b.index ? 1 : 0);
+      return { instructors: response.data };
+    } catch (err) {
+      return { instructors: [] };
     }
-  }
+  },
 };
 </script>
 

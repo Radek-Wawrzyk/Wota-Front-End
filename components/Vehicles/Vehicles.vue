@@ -24,24 +24,11 @@
 </template>
 
 <script>
-import axios from "axios";
-
-
 export default {
   name: "Vehicles",
   props: {
     noTitle: String,
-  },
-  data: () => ({
-    vehicles: []
-  }),
-  async created() {
-    try {
-      const response = await axios.get(`${this.$API}/vehicles`);
-      response.data ? this.vehicles = response.data.slice(1) : false;
-    } catch {
-      console.log(response.message);
-    }
+    vehicles: Array
   }
 };
 </script>

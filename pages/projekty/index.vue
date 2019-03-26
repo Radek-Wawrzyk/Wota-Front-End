@@ -36,9 +36,6 @@ import axios from "axios";
 
 export default {
   name: "projectsPage",
-  data: () => ({
-    projects: []
-  }),
   components: {
     Categories,
     Project
@@ -57,12 +54,12 @@ export default {
       return this.projects.filter(project => project.status === true);
     }
   },
-  async created() {
+  asyncData: async () => {
     try {
-      const response = await axios.get(`${this.$API}/projects`);
-      response.data ? (this.projects = response.data) : false;
-    } catch(error) {
-      console.log(error);
+      const response = await axios.get(`${process.env.API}/projects`);
+      return { projects: response.data };
+    } catch (err) {
+      return { projects: [] };
     }
   }
 };

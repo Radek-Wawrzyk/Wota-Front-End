@@ -3,12 +3,12 @@
     <SubHeader title="Kursy"></SubHeader>
     <div class="container">
       <section class="courses">
-        <CoursesTable/>
+        <CoursesTable :courses="courses" />
       </section>
     </div>
     <Sale/>
     <div class="container section-spacing">
-      <!-- <Gallery/> -->
+      <Gallery :gallery="gallery" />
     </div>
   </main>
 </template>
@@ -18,6 +18,7 @@ import Sale from "@/components/Sale/Sale.vue";
 import CoursesTable from "@/components/CoursesTable/CoursesTable";
 import Gallery from "@/components/Gallery/Gallery";
 import SubHeader from '@/components/SubHeader/SubHeader';
+import axios from 'axios';
 
 export default {
   name: "coursesPage",
@@ -27,8 +28,21 @@ export default {
     CoursesTable,
     SubHeader
   },
-  created() {
-    console.log('xD')
+  asyncData: async () => {
+    try {
+      const response = await axios.get(`${process.env.API}/courses`);
+      const data = await axios.get(`${process.env.API}/galery`);
+      response.data.sort(
+        (a, b) => a.title < b.title ? -1 : a.title > b.title ? 1 : 0
+      )
+      
+      return { 
+        courses: response.data,
+        gallery: data.data
+      };
+    } catch (err) {
+      return { courses: [] };
+    }
   }
 };
 </script>

@@ -3,7 +3,7 @@
     <Header/>
     <About/>
     <Categories/>
-    <Vehicles/>
+    <Vehicles :vehicles="vehicles" />
     <Reviews/>
     <Instructors/>
     <Sale/>
@@ -53,6 +53,14 @@ export default {
     Instructors,
     ContactForm,
     Map
+  },
+  asyncData: async () => {
+    try {
+      const response = await axios.get(`${process.env.API}/vehicles`);
+      return { vehicles: response.data };
+    } catch (err) {
+      return { vehicles: [] };
+    }
   }
 };
 </script>

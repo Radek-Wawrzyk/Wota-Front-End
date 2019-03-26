@@ -1,7 +1,6 @@
 <template>
   <div class="gallery">
-    <no-ssr>
-       <h2 class="section-title">{{title ? 'Galeria' : ''}}</h2>
+    <h2 class="section-title">{{title ? 'Galeria' : ''}}</h2>
     <el-row :gutter="20">
       <el-col :md="16">
         <GalleryPhoto title="Plac manewrowy" :image="galleryPlace[0].image" type="place" @openLightbox="openLightbox(0, $event)"></GalleryPhoto>
@@ -16,7 +15,6 @@
       </el-col>
     </el-row>
     <vue-gallery-slideshow :images="galleryType" :index="index" @close="index = null"></vue-gallery-slideshow>
-    </no-ssr>
   </div>
 </template>
 
@@ -28,7 +26,6 @@ import VueGallerySlideshow from 'vue-gallery-slideshow';
 export default {
   name: "gallery",
   data: () => ({
-    gallery: [],
     index: null,
     galleryPlaceImages: [],
     galleryHallImages: [],
@@ -39,11 +36,12 @@ export default {
     title: {
       type: Boolean,
       default: true
-    }
+    },
+    gallery: Array
   },
   components: {
     GalleryPhoto,
-    VueGallerySlideshow 
+    VueGallerySlideshow,
   },
   computed: {
     galleryPlace() {
@@ -95,14 +93,6 @@ export default {
     openLightbox(index, galleryCategory) {
       this.index = index;
       this.activeGallery = galleryCategory;
-    }
-  },
-  async created() {
-    try {
-      const response = await axios.get(`${this.$API}/galery`);
-      response.data ? (this.gallery = response.data) : false;
-    } catch(error) {
-      console.log(error);
     }
   }
 };

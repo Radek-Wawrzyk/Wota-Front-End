@@ -13,20 +13,12 @@
 <script>
 import axios from "axios";
 
-
 export default {
   name: 'Project',
-  data: () => ({
-    project: {}
-  }),
-  async created() {
-    try {
-      const response = await axios.get(`${this.$API}/projects/${this.$route.params.id}`);
-      response.data ? this.project = response.data.project : false;
-    } catch(error) {
-      console.log(error.message);
-    }
-  }
+  asyncData: async ({ params }) => {
+    const response = await axios.get(`${process.env.API}/projects/${params.id}`);
+    return { project: response.data.project };
+  },
 };
 </script>
 

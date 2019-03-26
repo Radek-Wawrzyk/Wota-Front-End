@@ -38,9 +38,12 @@ export default {
     '@/plugins/globalComponents',
     '@/plugins/VeeValidate',
     { src: '@/plugins/vueMaps', ssr: false },
-    { src: '@/plugins/vueCarousel', ssr: false }
+    { src: '@/plugins/vueCarousel', ssr: false },
+    { src: '@/plugins/vueGallery', ssr: false }
   ],
-
+  env: {
+    API: 'https://hubertkuzdak.com'
+  },
   /*
   ** Nuxt.js modules
   */

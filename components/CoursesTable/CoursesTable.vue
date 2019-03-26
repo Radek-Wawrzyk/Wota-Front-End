@@ -42,31 +42,10 @@
 </template>
 
 <script>
-//import { API } from "@/plugins/API.js";
-import axios from "axios";
-const API = '';
 export default {
   name: "coursesTable",
-  data: () => ({
-    courses: []
-  }),
-  async created() {
-    try {
-      const response = await axios.get(`${this.$API}/courses`);
-      response.data ? (this.courses = response.data) : false;
-      this.courses.sort(function(a, b) {
-        if (a.title < b.title) {
-          return -1;
-        }
-        if (a.title > b.title) {
-          return 1;
-        }
-        return 0;
-      });
-      console.log(this.courses);
-    } catch (error) {
-      console.log(error);
-    }
+  props: {
+    courses: Array
   }
 };
 </script>

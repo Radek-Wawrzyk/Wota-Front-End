@@ -20,25 +20,21 @@ import Map from "@/components/Map/Map.vue";
 import ContactTile from "@/components/ContactTile/ContactTile.vue";
 import axios from "axios";
 
-
 export default {
   name: "Contact",
-  data: () => ({
-    tiles: []
-  }),
   components: {
     ContactForm,
     ContactTile,
     Map
   },
-  async created() {
+  asyncData: async () => {
     try {
-      const response = await axios.get(`${this.$API}/contact`);
-      this.tiles = response.data;
-    } catch (error) {
-      console.log(error);
+      const response = await axios.get(`${process.env.API}/contact`);
+      return { tiles: response.data };
+    } catch(err) {
+      return { tiles: [] };
     }
-  }
+  },
 };
 </script>
 

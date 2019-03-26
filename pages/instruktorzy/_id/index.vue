@@ -19,23 +19,22 @@ import axios from "axios";
 
 export default {
   name: "instructorPage",
-  data: () => ({
-    instructor: {},
-    comments: []
-  }),
   components: {
     Comments,
     RateForm,
     InstructorProfile
   },
-  async created() {
+  asyncData: async ({ params }) => {
     try {
-      const response = await axios.get(`${this.$API}/instructors/${this.$route.params.id}`);
-      const { data } = await axios.get(`${this.$API}/rate/${this.$route.params.id}`);
-      this.comments = data;
-      response.data ? (this.instructor = response.data) : false;
-    } catch (error) {
-      console.log(error);
+      const response = await axios.get(`${process.env.API}/instructors/${params.id}`);
+      const { data } = await axios.get(`${process.env.API}/rate/${params.id}`);
+
+      return {
+        comments: data,
+        instructor: response.data
+      };
+    } catch (err) {
+      consooe.log(err);
     }
   }
 };
