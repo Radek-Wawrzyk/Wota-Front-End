@@ -36,7 +36,7 @@ export default {
     try {
       const response = await axios.get(`${API}/instructors/${this.id}`);
       const { data } = await axios.get(`${API}/rate/${this.id}`);
-      this.comments = data;
+      this.comments = data.filter(d => d.isAccepted);
       response.data ? (this.instructor = response.data) : false;
     } catch (error) {
       console.log(error);
