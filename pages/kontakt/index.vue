@@ -10,7 +10,10 @@
       <ContactTile :info="tiles[3]"></ContactTile>
     </section>
     <ContactForm title="Napisz do nas"/>
-    <Sale title="Dane bankowe" subtitle="Numer konta: <br>	61 1090 1014 0000 0712 1981 2874"/>
+    <Sale
+      title="Dane bankowe"
+      subtitle="Numer konta: <br><br>	Auto- Szkoła Wota sp. j <br><br> Bank Pekao S.A XI o/ Łódź <br> <br>08 1240 3073 1111 0000 3464 9389"
+    />
     <Map/>
   </main>
 </template>

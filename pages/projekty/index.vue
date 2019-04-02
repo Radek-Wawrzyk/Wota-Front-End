@@ -44,7 +44,13 @@ export default {
   },
   computed: {
     disabledProjects() {
-      return this.projects.filter(project => project.status === false);
+      const filtered = this.projects.filter(
+        project => project.status === false
+      );
+
+      return filtered.sort((a, b) => {
+        a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
+      })
     },
     disabledProjectsLenght() {
       return this.disabledProjects.length;

@@ -28,16 +28,16 @@
             <span
               v-for="(category, index) in instructor.categories"
               :key="index"
-            >{{category}},</span>
+            >{{category}}</span>
           </li>
-          <li class="instructor-list-item">
+          <!-- <li class="instructor-list-item">
             Średnia ocen:
             <span>4.9/5</span>
           </li>
           <li class="instructor-list-item">
             Opinii:
             <span>68</span>
-          </li>
+          </li> -->
         </ul>
         <footer class="instructor-more">
           <router-link
@@ -58,7 +58,6 @@
 <script>
 import axios from "axios";
 
-
 export default {
   name: "Instructors",
   data: () => ({
@@ -70,7 +69,7 @@ export default {
   }),
   async created() {
     try {
-      const response = await axios.get(`${this.$API}/instructors`);
+      const response = await axios.get(`${API}/instructors`);
       response.data ? (this.instructors = response.data) : false;
       this.instructors.sort(function(a, b) {
         if (a.index < b.index) {

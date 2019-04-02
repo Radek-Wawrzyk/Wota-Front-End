@@ -33,10 +33,14 @@
       background: $primary !important;
     }
   }
-  .nexist{
+  .nexist {
     text-align: center;
     color: #ccc;
   }
+}
+
+.instructor-name {
+  min-height: 64px;
 }
 
 //Instructor
