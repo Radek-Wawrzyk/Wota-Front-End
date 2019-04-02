@@ -4,11 +4,9 @@
     <section class="projects">
       <div class="container">
         <p class="projects-subtitle">
-          Jesteśmy liderem na łódzkim rynku szkoleń również w zakresie kursów prawa jazdy , współfinansowanych ze
-          środków unijnych. Posiadamy wieloletnie doświadczenie w realizacji projektów. Posiadamy wieloletnie
-          doświadczenie w realizacji projektów. Jesteśmy liderem na łódzkim rynku
-          szkoleń. Prowadzimy zarówno projekty lokalne, jak i współfinansowane ze
-          środków unijnych.
+          Jesteśmy liderem na łódzkim rynku szkoleń również w zakresie kursów prawa jazdy, współfinansowanych ze
+          środków unijnych. Posiadamy wieloletnie doświadczenie w realizacji projektów. Jesteśmy liderem na łódzkim rynku
+          szkoleń. Prowadzimy zarówno projekty lokalne, jak i współfinansowane ze środków unijnych.
         </p>
         <div>
           <h3 class="section-title">Trwające projekty</h3>

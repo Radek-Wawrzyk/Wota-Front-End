@@ -39,7 +39,6 @@ export default {
     try {
       const response = await axios.get(`${API}/vehicles`);
       response.data ? (this.vehicles = response.data.slice(1)) : false
-      console.log(this.vehicles);
       ;
       this.vehicles.sort(function(a, b) {
         if (a.categories[0] < b.categories[0]) {

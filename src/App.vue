@@ -44,7 +44,7 @@ export default {
       document.getElementById("cookie").style.display = "none";
     },
     getCookie() {
-      if (localStorage.getItem('cookie')) {
+      if (localStorage.getItem("cookie")) {
         return true;
       }
       return false;
@@ -87,6 +87,18 @@ button {
   margin: 0.5em;
   border: solid 1px rgb(106, 196, 21);
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .cookie-text {
+    padding-right: 160px;
+  }
+  .cookie-btn {
+    width: 80%;
+  }
+  .cookie-btn {
+    width: 20%;
+  }
 }
 </style>
 
