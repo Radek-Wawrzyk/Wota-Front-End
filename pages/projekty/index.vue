@@ -3,12 +3,15 @@
     <SubHeader title="Projekty"></SubHeader>
     <section class="projects">
       <div class="container">
-        <p>Nisi ea officia aliqua ut eiusmod labore incididunt. Labore dolore amet eiusmod reprehenderit dolore id ex laborum ullamco deserunt exercitation irure. Ea aliqua ea proident consequat nulla pariatur. Sit eiusmod duis sint consequat anim culpa proident anim esse quis elit occaecat.</p>
+        <p class="projects-subtitle"> 
+          Jesteśmy liderem na łódzkim rynku szkoleń w zakresie kursów prawa jazdy , współfinansowanych ze
+          środków unijnych. Posiadamy wieloletnie doświadczenie w realizacji projektów.
+        </p>
         <div>
           <h3 class="section-title">Trwające projekty</h3>
           <el-row :gutter="50">
             <el-col :md="12"  v-for="(project, index) in enabledProjects" :key="index" >
-              <Project :project="project"  />
+              <Project :project="project" />
             </el-col>
           </el-row>
           <p class="no-results" v-if="enabledProjectsLenght === 0">Brak trwających projektów</p>
@@ -17,7 +20,7 @@
           <h3 class="section-title">Zakończone projekty</h3>
           <el-row :gutter="50">
             <el-col :md="12" v-for="(project, index) in disabledProjects" :key="index" >
-              <Project :project="project"  />
+              <Project :project="project" />
             </el-col>
           </el-row>
           <p class="no-results" v-if="disabledProjectsLenght === 0">Brak zakończonych projektów</p>
@@ -32,7 +35,6 @@
 import Categories from "@/components/Categories/Categories";
 import Project from "@/components/Project/Project";
 import axios from "axios";
-
 
 export default {
   name: "projectsPage",

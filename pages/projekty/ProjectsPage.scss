@@ -1,7 +1,10 @@
-.projects{
+.projects {
   padding-top: 0;
   padding-bottom: 50px;
-  .section-title{
+  .section-title {
     margin-top: 50px;
+  }
+  &-subtitle {
+    text-align: center;
   }
 }
