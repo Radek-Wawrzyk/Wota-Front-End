@@ -17,7 +17,7 @@
     </section>
     <Categories></Categories>
     <div class="container section-spacing">
-      <!-- <Gallery/> -->
+      <Gallery :gallery="gallery"/>
     </div>
   </main>
 </template>
@@ -37,8 +37,13 @@ export default {
   },
   asyncData: async () => {
     try {
-      const response = await axios.get(`${process.env.API}/vehicles`);
-      return { vehicles: response.data };
+      const vehicles = await axios.get(`${process.env.API}/vehicles`);
+      const gallery = await axios.get(`${process.env.API}/galery`);
+
+      return { 
+        vehicles: vehicles.data,
+        gallery: gallery.data
+      };
     } catch (err) {
       return { vehicles: [] };
     }
