@@ -73,4 +73,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped src="./CoursePage.scss" />
+<style lang="scss" scoped src="./index.scss" />

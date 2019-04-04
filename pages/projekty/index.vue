@@ -74,4 +74,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped src="./ProjectsPage.scss" />
+<style lang="scss" scoped src="./index.scss" />

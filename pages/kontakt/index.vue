@@ -5,8 +5,6 @@
       <ContactTile :info="tiles[0]"></ContactTile>
       <ContactTile :info="tiles[1]"></ContactTile>
       <ContactTile :info="tiles[2]"></ContactTile>
-    </section>
-    <section class="contact-info">
       <ContactTile :info="tiles[3]"></ContactTile>
     </section>
     <ContactForm title="Napisz do nas"/>
@@ -44,4 +42,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped src="./Contact.scss" />
+<style lang="scss" scoped src="./index.scss" />

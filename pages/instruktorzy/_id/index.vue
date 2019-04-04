@@ -40,4 +40,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped src="./InstructorPage.scss" />
+<style lang="scss" scoped src="./index.scss" />

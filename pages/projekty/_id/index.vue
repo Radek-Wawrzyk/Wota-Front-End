@@ -22,4 +22,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped src="./ProjectPage.scss" />
+<style lang="scss" scoped src="./index.scss" />

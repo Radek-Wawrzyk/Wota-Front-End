@@ -47,4 +47,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped src="./CoursesPage.scss" />
+<style lang="scss" scoped src="./index.scss" />

@@ -51,4 +51,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped src="./VehiclesPage.scss" />
+<style lang="scss" scoped src="./index.scss" />

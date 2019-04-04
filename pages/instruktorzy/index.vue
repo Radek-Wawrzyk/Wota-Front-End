@@ -62,4 +62,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped src="./InstructorsPage.scss" />
+<style lang="scss" scoped src="./index.scss" />
