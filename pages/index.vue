@@ -73,7 +73,7 @@ export default {
   },
   asyncData: async () => {
     const response = await axios.get(`${process.env.API}/vehicles`);
-    response.data.sort((a, b) => a.title < b.title ? -1 : a.title > b.title ? 1 : 0);
+    response.data.sort((a, b) => a.categories[0]< b.categories[0]? -1 : a.categories[0]> b.categories[0]? 1 : 0);
     return { vehicles: response.data };
   }
 };
