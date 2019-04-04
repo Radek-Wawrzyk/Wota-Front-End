@@ -92,4 +92,16 @@ button {
   border: solid 1px rgb(106, 196, 21);
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .cookie-text {
+    padding-right: 160px;
+  }
+  .cookie-btn {
+    width: 80%;
+  }
+  .cookie-btn {
+    width: 20%;
+  }
+}
 </style>
