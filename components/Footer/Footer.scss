@@ -2,7 +2,7 @@
   background: $secondary;
   padding: 50px 0;
   color: $secondary-lighter;
-  .socials{
+  .socials {
     display: flex;
     justify-content: flex-end;
   }
@@ -12,6 +12,9 @@
     align-items: center;
     flex-wrap: wrap;
     margin: 0 0 50px 0;
+  }
+  &-menu {
+
   }
   &-logo {
     width: 150px;
@@ -23,6 +26,10 @@
   }
   &-links {
     display: flex;
+    &:last-of-type {
+      justify-content: flex-end;
+      margin: 10px 0 0 0;
+    }
     &-item {
       margin: 0 0 0 0;
       a {
@@ -40,30 +47,8 @@
       }
     }
   }
-  .color-white{
+  .color-white {
     color: white;
-  }
-  &-socials {
-    display: flex;
-    align-items: center;
-    &-item {
-      margin: 0 0 0 15px;
-      svg {
-        width: 20px;
-        height: auto;
-        path {
-          transition: fill 0.25s;
-        }
-      }
-      a {
-        &:hover,
-        &:focus {
-          svg path {
-            fill: rgb(179, 179, 179);
-          }
-        }
-      }
-    }
   }
   &-copyright {
     text-align: right;
@@ -86,6 +71,15 @@
     &-links {
       flex-wrap: wrap;
       justify-content: center;
+      width: 100%;
+      &-item {
+        margin: 0 0 5px 0;
+      }
+      &:last-of-type {
+        justify-content: center;
+      }
+    }
+    &-menu {
       width: 100%;
     }
     &-info {
