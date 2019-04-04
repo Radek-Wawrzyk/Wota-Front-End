@@ -11,8 +11,8 @@
               Kategorie:
               <span
                 class="vehicle-category-item"
-                v-for="(category, index) in vehicle.categories"
-                :key="index"
+                v-for="(category, title) in vehicle.categories"
+                :key="title"
               >{{category}},</span>
             </span>
             <img class="vehicle-img" :src="vehicle.image" :alt="vehicle.title">

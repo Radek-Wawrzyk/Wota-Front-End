@@ -1,8 +1,8 @@
 <template>
   <header class="page-header">
     <div>
-      <h1 class="text-primary font-weight-bold">Najstarsza prywatna auto szkoła</h1>
-      <h5 class="text-uppercase font-weight-bold">Łódź</h5>
+      <h1 class="text-primary font-weight-bold">Auto szkoła WOTA</h1>
+      <h5 class="text-uppercase font-weight-bold">Największy wybór kategorii w Łodzi</h5>
       <div class="header-buttons">
         <router-link to="/kursy" class="btn btn-outline">Kursy</router-link>
         <router-link to="/kontakt" class="btn btn-primary">Kontakt</router-link>

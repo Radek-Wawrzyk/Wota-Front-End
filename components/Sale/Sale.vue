@@ -1,7 +1,7 @@
 <template>
   <section class="sale">
     <div class="container">
-      <h2 class="sale-title">{{title ? title : 'Rabat -20%'}}</h2>
+      <h2 class="sale-title">{{title ? title : 'Rabat -5%'}}</h2>
       <p class="sale-description">
         <span v-if="subtitle">
           <span v-html="subtitle"></span>

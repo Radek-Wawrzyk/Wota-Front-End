@@ -4,8 +4,11 @@
     <section class="projects">
       <div class="container">
         <p class="projects-subtitle"> 
-          Jesteśmy liderem na łódzkim rynku szkoleń w zakresie kursów prawa jazdy , współfinansowanych ze
-          środków unijnych. Posiadamy wieloletnie doświadczenie w realizacji projektów.
+          Jesteśmy liderem na łódzkim rynku szkoleń również w zakresie kursów prawa jazdy , współfinansowanych ze
+          środków unijnych. Posiadamy wieloletnie doświadczenie w realizacji projektów. Posiadamy wieloletnie
+          doświadczenie w realizacji projektów. Jesteśmy liderem na łódzkim rynku
+          szkoleń. Prowadzimy zarówno projekty lokalne, jak i współfinansowane ze
+          środków unijnych.
         </p>
         <div>
           <h3 class="section-title">Trwające projekty</h3>
@@ -20,7 +23,7 @@
           <h3 class="section-title">Zakończone projekty</h3>
           <el-row :gutter="50">
             <el-col :md="12" v-for="(project, index) in disabledProjects" :key="index" >
-              <Project :project="project" />
+              <Project :project="project" disabled />
             </el-col>
           </el-row>
           <p class="no-results" v-if="disabledProjectsLenght === 0">Brak zakończonych projektów</p>
