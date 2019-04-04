@@ -30,7 +30,7 @@ export default {
       const { data } = await axios.get(`${process.env.API}/rate/${params.id}`);
 
       return {
-        comments: data,
+        comments: data.filter(accepted => accepted.isAccepted),
         instructor: response.data
       };
     } catch (err) {

@@ -77,7 +77,7 @@
               >REGULAMIN</a>
             </el-col>
             <el-col :md="24" class="submit-btn">
-              <button class="btn btn-outline-white" @click="submit" type="submit">Dodaj ocenę</button>
+              <button class="btn btn-outline-white" @click="submit" type="button">Dodaj ocenę</button>
             </el-col>
           </el-row>
         </el-form>
@@ -129,15 +129,15 @@ export default {
     ]
   }),
   methods: {
-    async submit(e) {
-      e.preventDefault();
+    async submit() {
+    
       try {
         const fullForm = Object.assign({}, this.credentials, {
           instructorId: this.instructor._id,
           rodo: true
         });
 
-        const response = await axios.post(`${API}/rate`, fullForm);
+        const response = await axios.post(`${process.env.API}/rate`, fullForm);
 
         if (response.status === 200) {
           this.submited = true;
