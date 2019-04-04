@@ -1,7 +1,7 @@
 <template>
   <nav class="navigation">
     <figure class="navigation-logo">
-      <nuxt-link to="/">
+      <nuxt-link to="/" class="navigation-logo-link">
         <img src="@/assets/img/logoC.png" alt="Wota">
       </nuxt-link>
     </figure>
@@ -49,9 +49,7 @@ export default {
   }),
   methods: {
     toggleMenu() {
-      if (window.innerWidth <= 1024) {
-        this.menuStatus = !this.menuStatus;
-      }
+      window.innerWidth <= 1024 ? this.menuStatus = !this.menuStatus : false;
     }
   }
 };
