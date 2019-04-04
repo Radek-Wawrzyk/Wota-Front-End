@@ -5,15 +5,15 @@
       <el-form >
         <el-row :gutter="30">
           <el-col :md="12">
-            <el-input v-model="credentials.name" placeholder="Imię" name="name" v-validate="'required'"></el-input>
+            <el-input v-model="credentials.name" placeholder="Imię" name="imie" v-validate="'required'"></el-input>
             <transition name="fade-down">
-               <span class="el-form-item__error" v-if="errors.has('name')">{{errors.first('name')}}</span>
+               <span class="el-form-item__error" v-if="errors.has('imie')">{{errors.first('imie')}}</span>
             </transition>
           </el-col>
           <el-col :md="12">
-            <el-input v-model="credentials.surname" placeholder="Nazwisko" v-validate="'required'" name="surname"></el-input>
+            <el-input v-model="credentials.surname" placeholder="Nazwisko" v-validate="'required'" name="nazwisko"></el-input>
             <transition name="fade-down">
-               <span class="el-form-item__error" v-if="errors.has('surname')">{{errors.first('surname')}}</span>
+               <span class="el-form-item__error" v-if="errors.has('nazwisko')">{{errors.first('nazwisko')}}</span>
             </transition>
           </el-col>
           <el-col :md="12">
@@ -42,12 +42,12 @@
               type="textarea"
               :rows="8"
               placeholder="Treść wiadomości..."
-              name="message"
+              name="wiadomosc"
               v-validate="'required'"
               v-model="credentials.message">
             </el-input>
             <transition name="fade-down">
-               <span class="el-form-item__error" v-if="errors.has('message')">{{errors.first('message')}}</span>
+               <span class="el-form-item__error" v-if="errors.has('wiadomosc')">{{errors.first('wiadomosc')}}</span>
             </transition>
           </el-col>
           <el-col :md="24" class="center">
@@ -61,8 +61,18 @@
 
 <script>
 import axios from "axios";
+import { Validator } from 'vee-validate';
 
+const dictionary = {
+  en: {
+    messages: {
+      email: 'Adres email jest nieprawidłowy',
+      required: field => `Pole ${field} jest wymagane`
+    }
+  },
+};
 
+Validator.localize(dictionary);
 export default {
   name: 'ContactForm',
   data: () => ({
@@ -73,16 +83,10 @@ export default {
       course: '',
       message: ''
     },
-    options: [
-      {
-        value: 'A',
-        label: 'A'
-      },
-      {
-        value: 'B1',
-        label: 'B1'
-      }
-    ]
+    options: [{
+      value: 'Brak',
+      label: 'Brak'
+    }]
   }),
   props: {
     title: String
@@ -90,9 +94,39 @@ export default {
   methods: {
     async submitForm() {
       const valid = await this.$validator.validateAll();
+      valid ? this.sendMessage() : false;
+    },
+    async sendMessage() {
+      try {
+        const response = await axios.post(`${process.env.API}/contact`, this.credentials);
+        this.$notify({
+          title: 'Sukces!',
+          message: 'Dziękujemy za kontakt!',
+          type: 'success'
+        });
+        for (let key in this.fields) {
+          this.fields[key] = "";
+        }
+      } catch(err) {
+        this.$notify({
+          title: 'Błąd!',
+          message: 'Wiadomość nie zostałą wysłana - błąd serwera',
+          type: 'error'
+        });
+      }
+    }
+  },
+  async created() {
+    if (process.browser) {
+      try {
+        const response = await axios.get(`${process.env.API}/courses`);
+        const categories = response.data;
 
-      if (valid) {
-        //VALID REQUEST 
+        categories.forEach(category => {
+          this.options.push({ value: category.title, label: category.title });
+        });
+      } catch (error) {
+        console.log(error);
       }
     }
   }

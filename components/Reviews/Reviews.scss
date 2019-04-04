@@ -24,13 +24,14 @@
 
 //Testimonial
 
-.nexist{
+.nexist {
   text-align: center;
   color: white;
 }
 
 .testimonial {
   padding: 100px 150px;
+  margin: auto;
   &-img {
     width: 100px;
     height: 100px;
@@ -61,21 +62,19 @@
   }
 }
 
-
-//Prev & Next buttons 
+//Prev & Next buttons
 
 .VueCarousel-navigation-button {
   svg {
     width: 25px;
     height: auto;
     path {
-      fill: #c7c7c7
+      fill: #c7c7c7;
     }
-  } 
+  }
 }
 
-
-//Media 
+//Media
 
 @media screen and (max-width: 768px) {
   .testimonial {
