@@ -28,8 +28,6 @@ main {
   color: #575757;
 }
 
-
-
 //Wysiwg editor content
 
 .editor-content{
@@ -57,7 +55,7 @@ main {
 
 @media screen and (max-width: 768px) {
   main > section {
-    padding: 40px 0;
+    padding: 0 0 40px 0;
   }
 }
 

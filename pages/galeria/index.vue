@@ -1,7 +1,7 @@
 <template>
   <main>
     <SubHeader title="Galeria"></SubHeader>
-    <section class="gallery">
+    <section class="gallery gallery-without-header">
       <div class="container">
         <Gallery :title="false" :gallery="gallery"></Gallery>
       </div>
@@ -24,3 +24,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped src="./index.scss" />

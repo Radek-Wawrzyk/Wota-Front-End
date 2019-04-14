@@ -10,7 +10,7 @@
       margin: 0 0 30px 0;
     }
     &-description {
-      font-size: 14px;
+      font-size: 16px;
       color: $secondary-lighter;
     }
   }
@@ -47,5 +47,25 @@
 @media screen and (max-width: 992px) {
   .tile {
     margin: 15px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    &-header {
+      margin: 0 auto 50px auto;
+      &-title {
+        margin: 0 0 15px 0;
+      }
+    }
+    .tile {
+      &-description {
+        font-size: 16px;
+      }
+      &-title {
+        margin: 15px 0 30px 0;;
+        min-height: auto;
+      }
+    }
   }
 }
