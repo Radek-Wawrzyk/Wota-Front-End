@@ -2,7 +2,7 @@
   <div id="nuxt">
     <Navbar />
     <div class="page">
-      <transition name="fade-up">
+      <transition name="fade-page" >
         <nuxt />
       </transition>
     </div>
